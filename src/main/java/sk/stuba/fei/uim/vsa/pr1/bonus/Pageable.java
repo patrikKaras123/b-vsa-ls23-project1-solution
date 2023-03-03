@@ -1,17 +1,20 @@
 package sk.stuba.fei.uim.vsa.pr1.bonus;
 
+/**
+ * Implementácia musí obsahovať prázdny konštruktor.
+ */
 public interface Pageable {
 
-    Pageable first();
+    Pageable of(int page, int size);
 
-    Pageable last();
+    Pageable first();
 
     Pageable previous();
 
     Pageable next();
 
-    int getPageNumber();
+    Integer getPageNumber();
 
-    int getPageSize();
+    Integer getPageSize();
 
 }

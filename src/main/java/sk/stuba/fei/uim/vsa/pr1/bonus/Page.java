@@ -1,14 +1,19 @@
 package sk.stuba.fei.uim.vsa.pr1.bonus;
 
-import java.util.stream.Stream;
+import java.util.List;
 
+/**
+ * Implementácia musí obsahovať prázdny konštruktor.
+ */
 public interface Page<R> {
 
-    Stream<R> getContent();
+    List<R> getContent();
 
     Pageable getPageable();
 
-    long getTotalElements();
+    Long getTotalElements();
+
+    void setTotalElements(Long totalElements);
 
     int getTotalPages();
 

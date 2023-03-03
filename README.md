@@ -17,7 +17,7 @@ zadania nakoľko bude opravované automatizovane pomocou JUnit testov. Na konci 
 Aplikácia musí pracovať s entitami:
 
 - **Študent** - obsahuje atribúty:
-  - AIS id
+  - AIS id (identifikátor študenta)
   - meno
   - email (musí byť unikátne)
   - ročník štúdia (číslo)
@@ -25,7 +25,7 @@ Aplikácia musí pracovať s entitami:
   - program štúdia
   - záverečná práca
 - **Pedagóg** - obsahuje atribúty:
-  - AIS id
+  - AIS id (identifikátor pedagóga)
   - meno
   - email (musí byť unikátne)
   - inštitút (pracovisko)
@@ -69,7 +69,7 @@ perzistované ako reťazce (ako názov enumeračnej hodnoty), nie ako číslo. E
   - Dizertačná práca
 - Enumerácia Status:
   - Voľná
-  - Zabraná / Pracuje sa
+  - Zabraná (môže byť aj 'Pracuje sa')
   - Odovzdaná
 
 Uvedené hodnoty nemusia byť presne také ako sú uvedené, je vám umožnená autorská sloboda, ale musia mať rovnaký význam/charakter.

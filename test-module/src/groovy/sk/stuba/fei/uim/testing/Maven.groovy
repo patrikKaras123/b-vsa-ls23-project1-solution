@@ -5,6 +5,10 @@ import groovy.xml.XmlUtil
 
 class Maven {
 
+    static String OUTPUT = "test-output.txt"
+    static String ERRORS = "test-error-output.txt"
+    static String SUREFIRE = "surefire-test-reports"
+
     Node pom
     File projectDir
 
@@ -83,6 +87,24 @@ class Maven {
             )
         }
         return null
+    }
+
+    Process runGoal(String... goal) {
+        List<String> args = ['cmd', '/c', 'mvn']
+        args += goal as List<String>
+        def builder = new ProcessBuilder(args)
+        builder.directory(projectDir)
+        builder.redirectOutput(new File(projectDir.absolutePath
+                + File.separator + Constants.FEEDBACK_DIR
+                + File.separator + 'maven'
+                + File.separator + OUTPUT))
+        builder.redirectError(new File(projectDir.absolutePath
+                + File.separator + Constants.FEEDBACK_DIR
+                + File.separator + 'maven'
+                + File.separator + ERRORS))
+        def process = builder.start()
+        process.waitFor()
+        return process
     }
 
 }

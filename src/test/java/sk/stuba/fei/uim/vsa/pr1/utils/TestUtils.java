@@ -4,6 +4,7 @@ import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sk.stuba.fei.uim.vsa.pr1.AbstractThesisService;
+import sk.stuba.fei.uim.vsa.pr1.bonus.Pageable;
 
 import java.lang.reflect.*;
 import java.sql.*;
@@ -169,6 +170,27 @@ public class TestUtils {
 
     public static Class<?> getEntityClassFromService(Class<AbstractThesisService<?, ?, ?>> serviceClass, int parameterOrder) {
         return (Class<?>) ((ParameterizedType) serviceClass.getGenericSuperclass()).getActualTypeArguments()[parameterOrder];
+    }
+
+    public static Pageable createPageable(int page, int size) {
+        Reflections reflections = new Reflections("sk.stuba.fei.uim.vsa.pr1");
+        Set<Class<?>> cps = reflections.get(SubTypes.of(Pageable.class).asClass());
+        assertEquals(1, cps.size());
+        return cps.stream()
+                .map(clazz -> {
+                    Pageable pageable = null;
+                    try {
+                        pageable = (Pageable) clazz.getDeclaredConstructor().newInstance();
+                    } catch (InvocationTargetException | InstantiationException | IllegalAccessException |
+                             NoSuchMethodException e) {
+                        log.error(e.getMessage(), e);
+                    }
+                    assertNotNull(pageable);
+                    return pageable;
+                })
+                .findFirst()
+                .map(p -> p.of(page, size))
+                .orElse(null);
     }
 
     public static Connection getDBConnection(String db, String username, String password) throws ClassNotFoundException, SQLException {

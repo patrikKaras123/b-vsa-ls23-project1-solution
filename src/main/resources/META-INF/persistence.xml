@@ -13,7 +13,7 @@
             <property name="javax.persistence.jdbc.user" value="vsa"/>
             <property name="javax.persistence.jdbc.password" value="vsa"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="eclipselink.target-database" value="PostgreSQL"/>
             <property name="eclipselink.logging.level" value="FINE"/>
         </properties>

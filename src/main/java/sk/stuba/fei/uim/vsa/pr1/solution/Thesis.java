@@ -6,7 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Builder
@@ -43,8 +43,11 @@ public class Thesis implements Serializable {
     private Student author;
 
     @Column(nullable = false)
-    private LocalDate publishedOn;
-    private LocalDate deadline;
+    @Temporal(TemporalType.DATE)
+    private Date publishedOn;
+
+    @Temporal(TemporalType.DATE)
+    private Date deadline;
 
     @Enumerated(EnumType.STRING)
     private Type type;

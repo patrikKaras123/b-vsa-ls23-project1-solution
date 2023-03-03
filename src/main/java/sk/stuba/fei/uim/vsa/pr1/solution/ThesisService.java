@@ -7,8 +7,12 @@ import sk.stuba.fei.uim.vsa.pr1.bonus.PageableThesisService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.security.SecureRandom;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -122,8 +126,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
                     .status(Thesis.Status.FREE_TO_TAKE)
                     .supervisor(teacher)
                     .department(teacher.getDepartment())
-                    .publishedOn(now)
-                    .deadline(now.plusMonths(3L))
+                    .publishedOn(asDate(now))
+                    .deadline(asDate(now.plusMonths(3L)))
                     .build();
         });
     }
@@ -135,7 +139,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             throw new IllegalArgumentException("Thesis with id '" + thesisId + "' has not been found!");
         if (thesis.getStatus() != Thesis.Status.FREE_TO_TAKE)
             throw new IllegalStateException("Thesis is not in the state to be assigned to a student");
-        if (LocalDate.now().isAfter(thesis.getDeadline()))
+        if (LocalDate.now().isAfter(asLocalDate(thesis.getDeadline())))
             throw new IllegalStateException("Thesis cannot be assigned to a student after the deadline on " + thesis.getDeadline().toString());
         Student student = getStudent(studentId);
         if (student == null)
@@ -150,7 +154,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
         Thesis thesis = getThesis(thesisId);
         if (thesis == null)
             throw new IllegalArgumentException("Thesis with id '" + thesisId + "' has not been found");
-        if (LocalDate.now().isAfter(thesis.getDeadline()))
+        if (LocalDate.now().isAfter(asLocalDate(thesis.getDeadline())))
             throw new IllegalStateException("Thesis cannot be submitted after the deadline on " + thesis.getDeadline().toString());
         if (thesis.getStatus() != Thesis.Status.IN_PROGRESS)
             throw new IllegalStateException("Thesis is not in the state to be submitted");
@@ -201,17 +205,82 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
 
     @Override
     public Page<Student> findStudents(Optional<String> name, Optional<String> year, Pageable pageable) {
-        return null;
+        String query = "select s from Student s";
+        List<String> conditions = new ArrayList<>();
+        name.ifPresent(s -> conditions.add("s.name like '%" + s + "%'"));
+        year.ifPresent(s -> conditions.add("s.year = " + s));
+        if (!conditions.isEmpty()) {
+            query += " where ";
+            query += String.join(" and ", conditions);
+        }
+        final String finalQuery = query;
+        List<Student> students = findByQuery(em ->
+                em.createQuery(finalQuery, Student.class)
+                        .setMaxResults(pageable.getPageSize())
+                        .setFirstResult(pageable.getPageSize() * pageable.getPageNumber()));
+        Page<Student> page = new PageImpl<>(students, pageable);
+        page.setTotalElements(getCount(query, "aisId", Collections.emptyMap()));
+        return page;
     }
 
     @Override
     public Page<Teacher> findTeachers(Optional<String> name, Optional<String> institute, Pageable pageable) {
-        return null;
+        String query = "select t from Teacher t";
+        List<String> conditions = new ArrayList<>();
+        name.ifPresent(t -> conditions.add("t.name like '%" + t + "%'"));
+        institute.ifPresent(t -> conditions.add("t.institute = '" + t + "'"));
+        if (!conditions.isEmpty()) {
+            query += " where ";
+            query += String.join(" and ", conditions);
+        }
+        final String finalQuery = query;
+        List<Teacher> teachers = findByQuery(em ->
+                em.createQuery(finalQuery, Teacher.class)
+                        .setMaxResults(pageable.getPageSize())
+                        .setFirstResult(pageable.getPageSize() * pageable.getPageNumber()));
+        Page<Teacher> page = new PageImpl<>(teachers, pageable);
+        page.setTotalElements(getCount(query, "aisId", Collections.emptyMap()));
+        return page;
     }
 
     @Override
     public Page<Thesis> findTheses(Optional<String> department, Optional<Date> publishedOn, Optional<String> type, Optional<String> status, Pageable pageable) {
-        return null;
+        String query = "select t from Thesis t";
+        List<String> conditions = new ArrayList<>();
+        Map<String, Object> parameters = new HashMap<>();
+        department.ifPresent(d -> {
+            conditions.add("t.department = :ddepartment");
+            parameters.put("ddepartment", d);
+        });
+        publishedOn.ifPresent(d -> {
+            conditions.add("t.publishedOn = :publishDate");
+            parameters.put("publishDate", d);
+        });
+        type.ifPresent(t -> {
+            conditions.add("t.type = :ttype");
+            parameters.put("ttype", Thesis.Type.valueOf(t.toUpperCase()));
+        });
+        status.ifPresent(s -> {
+            conditions.add("t.status = :sstatus");
+            parameters.put("sstatus", Thesis.Status.valueOf(s.toUpperCase()));
+        });
+        if (!conditions.isEmpty()) {
+            query += " where ";
+            query += String.join(" and ", conditions);
+        }
+        final String finalQuery = query;
+        List<Thesis> theses = findByQuery(em -> {
+            TypedQuery<Thesis> q = em.createQuery(finalQuery, Thesis.class)
+                    .setMaxResults(pageable.getPageSize())
+                    .setFirstResult(pageable.getPageSize() * pageable.getPageNumber());
+            if (!parameters.isEmpty()) {
+                parameters.forEach(q::setParameter);
+            }
+            return q;
+        });
+        Page<Thesis> page = new PageImpl<>(theses, pageable);
+        page.setTotalElements(getCount(query, "id", parameters));
+        return page;
     }
 
 
@@ -311,5 +380,48 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
         } finally {
             manager.close();
         }
+    }
+
+    private <R> Long getCount(Class<R> clazz) {
+        EntityManager manager = this.emf.createEntityManager();
+        try {
+            CriteriaBuilder cb = manager.getCriteriaBuilder();
+            CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+            cq.select(cb.count(cq.from(clazz)));
+            TypedQuery<Long> query = manager.createQuery(cq);
+            return query.getSingleResult();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            return null;
+        } finally {
+            manager.close();
+        }
+    }
+
+    private Long getCount(String query, String primaryKey, Map<String, Object> parameters) {
+        EntityManager manager = this.emf.createEntityManager();
+        try {
+            int fromIndex = query.indexOf("from");
+            String entity = query.substring(fromIndex).split(" ")[2];
+            query = "select count(" + entity + ") " + query.substring(fromIndex);
+            TypedQuery<Long> q = manager.createQuery(query, Long.class);
+            if (parameters != null && !parameters.isEmpty()) {
+                parameters.forEach(q::setParameter);
+            }
+            return q.getSingleResult();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            return null;
+        } finally {
+            manager.close();
+        }
+    }
+
+    private static Date asDate(LocalDate localDate) {
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+    }
+
+    private static LocalDate asLocalDate(Date date) {
+        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
     }
 }
