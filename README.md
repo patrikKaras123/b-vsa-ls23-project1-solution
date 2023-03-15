@@ -63,11 +63,11 @@ Záverečná práca môže existovať aj bez zadaného študenta.
 Záverečná práca obsahuje dva atribúty, ktorých hodnoty sú enumerácie (typ a status). Enumeračné atribúty musia byť
 perzistované ako reťazce (ako názov enumeračnej hodnoty), nie ako číslo. Enumerácie by mali mať minimálne nasledovné hodnoty:
 
-- Enumerácia Typ:
-  - Bakalárska práca
-  - Diplomová práca
-  - Dizertačná práca
-- Enumerácia Status:
+- Enumerácia Typ (musia byť presne tieto hodnoty):
+  - BANCHELOR
+  - MASTER
+  - DISSERTATION
+- Enumerácia Status (skutočné hodnoty môžu byť ľubovolné):
   - Voľná
   - Zabraná (môže byť aj 'Pracuje sa')
   - Odovzdaná
@@ -102,7 +102,7 @@ triedy `Project1` a `AbstractThesisService` a súbor [`logback.xml`](src/main/re
   - Derby
   - PostgreSQL (bude použitá ako testovacia databáza pri oprave)
   - H2
-- Doplnenie informácií o authorovi (developerovi)
+- Doplnenie informácií o authorovi (developerovi, tag `<developers><developer>`)
 
 **Názov `persistence-unit`** v súbore [persistence.xml](src/main/resources/META-INF/persistence.xml) **nemeňte**. Pre
 vlastné otestovanie aplikácie použite metódu main v triede [Project1](src/main/java/sk/stuba/fei/uim/vsa/pr1/pr1/Project1.java).
@@ -114,7 +114,7 @@ tieto účeli môžte využiť súbor [starter.postgres.sql](configs/starter.pos
 
 Implementujte vlastnú triedu, ktorá bude dediť od triedy `AbstractThesisService` a tak implementovať jej
 abstraktné metódy a **preťažovať konštruktor**. Táto trieda má slúžiť, ako API (alebo ako fasáda) pre funkcionality aplikácie
-a testy hodnotenia budú využívať jej implementáciu.
+a testy hodnotenia budú využívať jej implementáciu. Pozorne si prečítajte komentáre nad triedou a metódami.
 
 Hodnotiť sa bude iba master/main branch. Kvôli testom a zrýchleniu opravovania je nutné dodržať pokyny a štruktúru
 projektu, ako je stanovené v zadaní! Iba kód poslednej verzie vypracovania (t.j. z posledného commit-u) do termínu
@@ -150,4 +150,13 @@ už má túto knižnicu inicializovanú, takže ju je možné priamo použiť vo
 
 ## Bonus (3b)
 
-// TODO
+V rámci zadania máte možnosť implementovať rozšírenie funkcionality o tzv. stránkovanie výsledkov za 3 bonusové body.
+Pre implementáciu bonusu implementujte rozhrania Page a Pageable ako dve nové vlastné triedy a rozšírte vašu triedu,
+ktorá dedí od triedy AbstractThesisService, o implementovanie rozhrania PageableThesisService.
+
+Týmto spôsobom rozšírite vašu implementáciu o tri ďalšie metódy. Jednotlivé metódy majú argumenty typu Optional.
+To znamená, že musíte ošetriť všetky kombinácie, kedy sú jednotlivé argumenty ako prázdny Optional (t.j. Optional.empty())
+a kedy obsahuje Optional hodnotu (t.j. Optional.isPresent() == true). Metódy musia vrátiť jednu stránku podľa zadaného
+objektu implementujúci rozhranie Pageable.
+
+Bonusové vypracovanie bude uznané jedine v prípade ak je implementované celé zadanie.

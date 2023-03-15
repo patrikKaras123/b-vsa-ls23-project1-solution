@@ -7,12 +7,15 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static sk.stuba.fei.uim.vsa.pr1.utils.TestConstants.ID_FIELDS;
@@ -113,6 +116,69 @@ public class SanityCheckTest {
             Object students = studentClass.newInstance();
             assertNotNull(students);
             assertNull(getEntityId(students, studentIdField));
+        } catch (Exception e) {
+            fail(e);
+        }
+    }
+
+    @Test
+    void testValidityOfPOMFile() {
+        log.info("Checking if student is set as developer in pom.xml");
+        File pom = new File("pom.xml");
+        assertNotNull(pom);
+        try (Stream<String> lineStream = Files.lines(pom.toPath())) {
+            List<String> lines = lineStream
+                    .filter(Objects::nonNull)
+                    .map(String::trim)
+                    .filter(l -> !l.isEmpty())
+                    .collect(Collectors.toList());
+            boolean developerTag = false;
+            for (String line : lines) {
+                if (line.contains("</developers>")) {
+                    break;
+                }
+                if (line.contains("<developer>")) {
+                    developerTag = true;
+                    continue;
+                }
+                if (developerTag) {
+                    if (line.contains("<id>")) {
+                        assertFalse(line.contains("999999"));
+                        log.info("Found student id " + line);
+                    }
+                    if (line.contains("<name>")) {
+                        assertFalse(line.contains("Meno Študenta"));
+                        log.info("Found student name " + line);
+                    }
+                    if (line.contains("<email>")) {
+                        assertFalse(line.contains("xstudent@stuba.sk"));
+                        log.info("Found student email " + line);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            fail(e);
+        }
+    }
+
+    @Test
+    void testPersistentUnitName() {
+        log.info("Checking for correct name in persistence.xml");
+        File pom = new File(String.join(File.separator, "src", "main", "resources", "META-INF", "persistence.xml"));
+        assertNotNull(pom);
+        try (Stream<String> lineStream = Files.lines(pom.toPath())) {
+            assertTrue(lineStream
+                    .filter(Objects::nonNull)
+                    .map(String::trim)
+                    .filter(l -> !l.isEmpty())
+                    .filter(l -> l.contains("<persistence-unit"))
+                    .anyMatch(l -> {
+                        int i = l.indexOf("name=\"");
+                        if (i == -1) return false;
+                        int j = l.indexOf("\"", i + 6);
+                        if (j == -1) return false;
+                        return l.substring(i + 6, j).equals("vsa-project-1");
+                    }));
         } catch (Exception e) {
             fail(e);
         }

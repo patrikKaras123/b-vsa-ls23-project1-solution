@@ -7,7 +7,9 @@ class Maven {
 
     static String OUTPUT = "test-output.txt"
     static String ERRORS = "test-error-output.txt"
-    static String SUREFIRE = "surefire-test-reports"
+    static String SUREFIRE_REPORTS_DIR = "surefire-test-reports"
+    static String MAVEN_REPORTS_DIR = "maven-reports"
+    static String REPORT_DIR = String.join(File.separator, ['target', 'surefire-reports'])
 
     Node pom
     File projectDir
@@ -96,11 +98,11 @@ class Maven {
         builder.directory(projectDir)
         builder.redirectOutput(new File(projectDir.absolutePath
                 + File.separator + Constants.FEEDBACK_DIR
-                + File.separator + 'maven'
+                + File.separator + MAVEN_REPORTS_DIR
                 + File.separator + OUTPUT))
         builder.redirectError(new File(projectDir.absolutePath
                 + File.separator + Constants.FEEDBACK_DIR
-                + File.separator + 'maven'
+                + File.separator + MAVEN_REPORTS_DIR
                 + File.separator + ERRORS))
         def process = builder.start()
         process.waitFor()

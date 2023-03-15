@@ -334,7 +334,7 @@ def runMvnTest = { File project, File output, File errors ->
     process.waitFor()
 }
 
-//TODO dať do Evaluation triedy
+
 def aggregateTestReports = { File project, File surefireXml, File surefireTxt ->
     surefireXml.text = '<?xml version="1.0" encoding="UTF-8"?>'
     surefireTxt.text = ''
@@ -351,7 +351,7 @@ def aggregateTestReports = { File project, File surefireXml, File surefireTxt ->
     }
 }
 
-//TODO dať do Evaluation triedy
+
 def evaluateTests = { File surefireReport, boolean bonusTests ->
     TestsRun run = new TestsRun()
     surefireReport.eachLine { line ->
@@ -369,7 +369,7 @@ def evaluateTests = { File surefireReport, boolean bonusTests ->
     return run
 }
 
-//TODO dať do Evaluation triedy
+
 def buildSummaryFile = { Evaluation eval, File project ->
     def summaryFile = new File(project.absolutePath + File.separator + FEEDBACK_DIR + File.separator + 'summary.xml')
     summaryFile.text = XmlUtil.serialize(eval.toXml())

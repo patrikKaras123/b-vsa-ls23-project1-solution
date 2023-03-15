@@ -7,6 +7,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
+/**
+ * Trieda API pre vypracovanie zadania. Výsledné vypracovanie zadania musí dediť (extends) od tejto triedy.
+ * V preťaženom konštruktore vlastnej implementácie nezabudnite zavolať aj super konštruktor ({@code super();}).
+ * V triede už je k dispozícii vytvorený EntityManagerFactory (property emf), tú môžete využiť
+ * v rámci svojich metód len ju v tých metódach nezatvárajte. Nezabudnite však vždy zatvoriť vytvoreného
+ * EntityManager a prípadné transakcie!
+ *
+ * @param <S> Trieda reprezentujúca študenta (student)
+ * @param <T> Trieda reprezentujúca pedagóga (teacher)
+ * @param <A> Trieda reprezentujúca záverečnú prácu (assignment)
+ */
 public abstract class AbstractThesisService<S, T, A> implements AutoCloseable {
 
     protected static final Logger log = LoggerFactory.getLogger(AbstractThesisService.class);

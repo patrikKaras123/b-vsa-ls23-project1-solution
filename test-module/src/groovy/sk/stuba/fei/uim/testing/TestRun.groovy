@@ -31,7 +31,7 @@ public class TestRun {
     }
 
     Node toXml() {
-        return new NodeBuilder().testsRun {
+        return new NodeBuilder().testRun {
             'totalRun'(totalRun)
             'success'(success)
             'failure'(failure)
@@ -39,5 +39,21 @@ public class TestRun {
             'skip'(skip)
             'points'(points)
         } as Node
+    }
+
+    TestRun evaluateTests(File surefireReport, boolean bonusTests){
+        surefireReport.eachLine { line ->
+            if (!line.startsWith('Tests run:')) return
+            String[] parts = line.split(',')
+            this.totalRun += Integer.parseInt(parts[0].substring(parts[0].lastIndexOf(' ')).trim())
+            this.failure += Integer.parseInt(parts[1].substring(parts[1].lastIndexOf(' ')).trim())
+            this.error += Integer.parseInt(parts[2].substring(parts[2].lastIndexOf(' ')).trim())
+            this.skip += Integer.parseInt(parts[3].substring(parts[3].lastIndexOf(' ')).trim())
+
+        }
+        int maxPoints = bonusTests ? Constants.MAX_BONUS_POINTS : Constants.MAX_POINTS
+        this.calcSuccess()
+        this.calcPoints(maxPoints.doubleValue())
+        return this
     }
 }
