@@ -131,7 +131,7 @@ public class PageableTest {
         Long teacherId = getEntityId(teacher, teacherIdField);
 
         for (int i = 1; i < 16; i++) {
-            String type = "BANCHELOR";
+            String type = "BACHELOR";
             if (i % 2 == 0) type = "MASTER";
             Object thesis = thesisService.makeThesisAssignment(
                     teacherId,
@@ -145,7 +145,7 @@ public class PageableTest {
 
         Pageable pageable = createPageable(1, 7);
         assertNotNull(pageable);
-        Page<Object> theses = pagedThesisService.findTheses(Optional.of(TestData.Teacher01.department), Optional.empty(), Optional.of("BANCHELOR"), Optional.empty(), pageable);
+        Page<Object> theses = pagedThesisService.findTheses(Optional.of(TestData.Teacher01.department), Optional.empty(), Optional.of("BACHELOR"), Optional.empty(), pageable);
         assertNotNull(theses);
         assertNotNull(theses.getContent());
         assertEquals(1, theses.getContent().size());

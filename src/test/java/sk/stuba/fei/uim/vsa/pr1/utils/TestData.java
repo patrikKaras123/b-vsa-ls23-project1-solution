@@ -37,9 +37,9 @@ public class TestData {
     }
 
     public static class Thesis01 {
-        public static final String title = "Excelent Simple Banchelor Thesis";
+        public static final String title = "Excellent Simple Bachelor Thesis";
         public static final String description = "Some description of the thesis";
-        public static final String type = "BANCHELOR";
+        public static final String type = "BACHELOR";
     }
 
     public static class Thesis02 {

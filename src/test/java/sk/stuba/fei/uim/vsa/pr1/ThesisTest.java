@@ -114,7 +114,7 @@ public class ThesisTest {
         assertInstanceOf(thesisClass, thesis);
         testToHaveAnIdField(thesis, thesisIdField);
         Long thesisId = getEntityId(thesis, thesisIdField);
-        Object status = getFieldValue(thesis, "status"); // TODO WARN! takýto field nemusí byť v triede, najlepšie ošetriť všeobecne
+        Object status = getFieldValue(thesis, "status");
 
         Object student = createStudent(thesisService, Student01.class);
         assertNotNull(student);

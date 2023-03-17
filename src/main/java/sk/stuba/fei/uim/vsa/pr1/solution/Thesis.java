@@ -59,7 +59,7 @@ public class Thesis implements Serializable {
     }
 
     public static enum Type {
-        BANCHELOR,
+        BACHELOR,
         MASTER,
         DISSERTATION;
     }
