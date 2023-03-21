@@ -1,14 +1,20 @@
 package sk.stuba.fei.uim.vsa.pr1;
 
+import sk.stuba.fei.uim.vsa.pr1.entities.Assignment;
+import sk.stuba.fei.uim.vsa.pr1.entities.Student;
+import sk.stuba.fei.uim.vsa.pr1.entities.Teacher;
+import sk.stuba.fei.uim.vsa.pr1.enums.Status;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ThesisService extends AbstractThesisService<Student, Teacher, Assignment> {
 
-    //public ThesisService(){
-    //    super();
-    //}
+    public ThesisService() {
+        super();
+    }
 
     @Override
     public Student createStudent(Long aisId, String name, String email) {
@@ -195,16 +201,16 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
         }
         EntityManager em = emf.createEntityManager();
         try {
+            Teacher pedagog = em.find(Teacher.class, teacher.getAisId());
+            if(pedagog == null) {
+                return null;
+            }
             if(teacher.getEmail() != null) {
                 TypedQuery<Teacher> pedagogTypedQuery = em.createQuery("select p from Teacher p where p.email= :email", Teacher.class);
                 pedagogTypedQuery.setParameter("email", teacher.getEmail());
                 if(pedagogTypedQuery.getResultList().size() > 0) {
                     return null;
                 }
-            }
-            Teacher pedagog = em.find(Teacher.class, teacher.getAisId());
-            if(pedagog == null) {
-                return null;
             }
             em.getTransaction().begin();
             pedagog.setInstitut(teacher.getInstitut());
@@ -262,17 +268,100 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
 
     @Override
     public Assignment makeThesisAssignment(Long supervisor, String title, String type, String description) {
-        return null;
+        if(supervisor == null) {
+            throw new IllegalArgumentException("Supervisor is null");
+        }
+        EntityManager em = emf.createEntityManager();
+        try {
+            Teacher teacher = em.find(Teacher.class, supervisor);
+            if(teacher == null) {
+                return null;
+            }
+            Assignment assignment = new Assignment(teacher, title, type, description);
+            em.getTransaction().begin();
+            em.persist(assignment);
+            em.getTransaction().commit();
+            return assignment;
+        }catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            return null;
+        }finally {
+            if(em != null) {
+                em.close();
+            }
+        }
     }
 
     @Override
     public Assignment assignThesis(Long thesisId, Long studentId) {
-        return null;
+        if(thesisId == null) {
+            throw new IllegalArgumentException("thesisId is null");
+        }
+        if(studentId == null) {
+            throw new IllegalArgumentException("studentId is null");
+        }
+        EntityManager em = emf.createEntityManager();
+        try {
+            Assignment assignment = em.find(Assignment.class, thesisId);
+            Student student = em.find(Student.class, studentId);
+            if(assignment == null || student == null) {
+                return null;
+            }
+            boolean compareDates = LocalDate.now().isAfter(assignment.getOdovzdaniePrace());
+            if(assignment.getStatus().equals(Status.Submitted) || assignment.getStatus().equals(Status.Taken)
+            || compareDates) {
+                throw new IllegalStateException("Assignment cannot be taken");
+            }
+            em.getTransaction().begin();
+            assignment.setStudent(student);
+            assignment.setStatus(Status.Taken);
+            em.getTransaction().commit();
+            return assignment;
+        }catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            return null;
+        }finally {
+            if(em != null) {
+                em.close();
+            }
+        }
     }
 
     @Override
     public Assignment submitThesis(Long thesisId) {
-        return null;
+        if(thesisId == null) {
+            throw new IllegalArgumentException("thesisId is null");
+        }
+        EntityManager em = emf.createEntityManager();
+        try {
+            Assignment assignment = em.find(Assignment.class, thesisId);
+            if(assignment == null) {
+                return null;
+            }
+            Student student = assignment.getStudent();
+            boolean compareDates = LocalDate.now().isAfter(assignment.getOdovzdaniePrace());
+            if(assignment.getStatus().equals(Status.Submitted) || compareDates || student.getAisId() == null
+            || assignment.getStatus().equals(Status.Free)) {
+                throw new IllegalStateException("Assignment cannot be submitted");
+            }
+            em.getTransaction().begin();
+            assignment.setStatus(Status.Submitted);
+            em.getTransaction().commit();
+            return assignment;
+        }catch (Exception e){
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            return null;
+        }finally {
+            if(em != null) {
+                em.close();
+            }
+        }
     }
 
     @Override
