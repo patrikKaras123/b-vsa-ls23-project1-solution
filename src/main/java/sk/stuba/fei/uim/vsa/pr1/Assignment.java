@@ -10,6 +10,8 @@ import java.util.Random;
 @Data
 public class Assignment {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(nullable = false, unique = true)
     private String registracneCislo;
     private String nazov;

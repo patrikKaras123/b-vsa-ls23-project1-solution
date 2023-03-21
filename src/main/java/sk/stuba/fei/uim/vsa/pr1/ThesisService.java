@@ -2,11 +2,13 @@ package sk.stuba.fei.uim.vsa.pr1;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.io.Serializable;
 import java.util.List;
 
-public class Zadanie1 extends AbstractThesisService<Student, Teacher, Assignment> implements Serializable {
+public class ThesisService extends AbstractThesisService<Student, Teacher, Assignment> {
 
+    //public ThesisService(){
+    //    super();
+    //}
 
     @Override
     public Student createStudent(Long aisId, String name, String email) {
