@@ -4,7 +4,9 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="vsa-project-1" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-<!--        <class></class>-->
+        <class>sk.stuba.fei.uim.vsa.pr1.Teacher</class>
+        <class>sk.stuba.fei.uim.vsa.pr1.Assignment</class>
+        <class>sk.stuba.fei.uim.vsa.pr1.Student</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vsa_pr1"/>
