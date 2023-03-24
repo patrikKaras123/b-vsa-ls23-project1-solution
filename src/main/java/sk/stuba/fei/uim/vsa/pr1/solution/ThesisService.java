@@ -68,6 +68,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
         return student;
     }
 
+    // TODO CHYBA department má byť institue
     @Override
     public Teacher createTeacher(Long aisId, String name, String email, String department) {
         return create(() -> Teacher.builder()
