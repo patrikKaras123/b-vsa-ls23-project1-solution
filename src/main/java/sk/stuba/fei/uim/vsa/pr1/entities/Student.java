@@ -2,15 +2,15 @@ package sk.stuba.fei.uim.vsa.pr1.entities;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Student implements Serializable {
     @Id
     @Column(nullable = false, unique = true)
@@ -21,7 +21,7 @@ public class Student implements Serializable {
     private Integer rocnikStudia;
     private Integer semesterStudia;
     private String programStudia;
-    @OneToOne(mappedBy = "student", orphanRemoval = true)
+    @OneToOne(mappedBy = "student")
     private Assignment assignment;
 
     public Student(Long aisId, String name, String email) {

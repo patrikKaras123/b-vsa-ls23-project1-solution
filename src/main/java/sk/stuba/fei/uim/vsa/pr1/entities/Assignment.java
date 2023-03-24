@@ -1,6 +1,8 @@
 package sk.stuba.fei.uim.vsa.pr1.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import sk.stuba.fei.uim.vsa.pr1.enums.Status;
 import sk.stuba.fei.uim.vsa.pr1.enums.Typ;
 
@@ -10,7 +12,8 @@ import java.util.Random;
 import java.util.UUID;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,8 +24,10 @@ public class Assignment {
     private String popis;
     private String pracovisko;
     @ManyToOne(optional = false)
+    @JoinColumn(nullable = false)
     private Teacher teacher;
-    @OneToOne
+    @OneToOne()
+    @JoinColumn(nullable = true)
     private Student student;
     private LocalDate datumZverejnenia;
     private LocalDate odovzdaniePrace;
@@ -35,6 +40,7 @@ public class Assignment {
 
     public Assignment(Teacher teacher, String title, String type, String description) {
         this.teacher = teacher;
+        this.pracovisko = teacher.getInstitut();
         this.nazov = title;
         this.popis = description;
         this.typ = Typ.valueOf(type);
@@ -42,6 +48,17 @@ public class Assignment {
         this.datumZverejnenia = LocalDate.now();
         this.odovzdaniePrace = LocalDate.now().plusMonths(3);
         this.registracneCislo = generateRegCislo(teacher.getMeno());
+    }
+
+    public Assignment(Teacher teacher, String nazov, String popis, String bachelor, String free) {
+        this.teacher = teacher;
+        this.nazov = nazov;
+        this.popis = popis;
+        this.typ = Typ.valueOf(bachelor);
+        this.status = Status.valueOf(free);
+        this.datumZverejnenia = LocalDate.now();
+        this.odovzdaniePrace = LocalDate.now().plusMonths(3);
+        this.registracneCislo = generateRegCislo("test");
     }
 
     private String generateRegCislo(String meno) {

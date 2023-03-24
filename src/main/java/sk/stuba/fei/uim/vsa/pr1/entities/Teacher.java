@@ -1,17 +1,17 @@
 package sk.stuba.fei.uim.vsa.pr1.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Teacher implements Serializable {
     @Id
     @Column(nullable = false, unique = true)
@@ -21,7 +21,7 @@ public class Teacher implements Serializable {
     private String email;
     private String institut;
     private String oddelenie;
-    @OneToMany(mappedBy = "teacher", orphanRemoval = true)
+    @OneToMany(mappedBy = "teacher", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Assignment> assignmentList;
 
     public Teacher() {
@@ -34,5 +34,18 @@ public class Teacher implements Serializable {
         this.email = email;
         this.oddelenie = department;
         this.assignmentList = new ArrayList<>();
+    }
+
+    public Teacher(Long aisId, String meno, String email, String oddelenie, String institut, List<Assignment> o) {
+        this.aisId = aisId;
+        this.meno = meno;
+        this.email = email;
+        this.oddelenie = oddelenie;
+        this.institut = institut;
+        this.assignmentList = o;
+    }
+
+    public void addAssignment(Assignment assignment) {
+        this.assignmentList.add(assignment);
     }
 }
