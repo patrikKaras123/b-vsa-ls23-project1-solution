@@ -1,0 +1,1 @@
+fatal: paths 'project ...' with -a does not make sense
