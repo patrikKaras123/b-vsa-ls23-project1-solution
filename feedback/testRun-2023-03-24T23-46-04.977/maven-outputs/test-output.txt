@@ -1,0 +1,925 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------< sk.stuba.fei.uim.vsa:b-vsa-ls23-project1-solution >----------
+[INFO] Building b-vsa-ls23-project1-solution 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ b-vsa-ls23-project1-solution ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1-solution ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to C:\Users\mlado\Documents\Projects\STUBA\VSA 23\vsa-testing-module\localTestRun\tested\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1-solution ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\mlado\Documents\Projects\STUBA\VSA 23\vsa-testing-module\localTestRun\tested\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ b-vsa-ls23-project1-solution ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\Users\mlado\Documents\Projects\STUBA\VSA 23\vsa-testing-module\localTestRun\tested\target\test-classes
+[WARNING] /C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Some input files use or override a deprecated API.
+[WARNING] /C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Some input files use unchecked or unsafe operations.
+[WARNING] /C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ b-vsa-ls23-project1-solution ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.SanityCheckTest
+2023-03-24 23:46:17.618  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for implementation of AbstractThesisService class
+2023-03-24 23:46:17.722  INFO --- [           main] org.reflections.Reflections              : Reflections took 83 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: server: 2023-03-24 23:46:17.938--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-03-24 23:46:18.072--ServerSession(1190566357)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:18.092--ServerSession(1190566357)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field supervisedTheses] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:18.099--ServerSession(1190566357)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:18.1--ServerSession(1190566357)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field author] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Student.
+[EL Config]: metadata: 2023-03-24 23:46:18.104--ServerSession(1190566357)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field supervisor] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:18.105--ServerSession(1190566357)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:18.105--ServerSession(1190566357)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field thesis] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:18.106--ServerSession(1190566357)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:18.121--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:18.122--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [institute] is being defaulted to: INSTITUTE.
+[EL Config]: metadata: 2023-03-24 23:46:18.122--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:18.122--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:18.123--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:18.123--ServerSession(1190566357)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is being defaulted to: Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:18.123--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [registrationNumber] is being defaulted to: REGISTRATIONNUMBER.
+[EL Config]: metadata: 2023-03-24 23:46:18.123--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2023-03-24 23:46:18.124--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [publishedOn] is being defaulted to: PUBLISHEDON.
+[EL Config]: metadata: 2023-03-24 23:46:18.13--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-03-24 23:46:18.131--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: metadata: 2023-03-24 23:46:18.131--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [type] is being defaulted to: TYPE.
+[EL Config]: metadata: 2023-03-24 23:46:18.136--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:18.137--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [deadline] is being defaulted to: DEADLINE.
+[EL Config]: metadata: 2023-03-24 23:46:18.137--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-03-24 23:46:18.138--ServerSession(1190566357)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-03-24 23:46:18.138--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [studyProgramme] is being defaulted to: STUDYPROGRAMME.
+[EL Config]: metadata: 2023-03-24 23:46:18.138--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [year] is being defaulted to: YEAR.
+[EL Config]: metadata: 2023-03-24 23:46:18.138--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:18.139--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [term] is being defaulted to: TERM.
+[EL Config]: metadata: 2023-03-24 23:46:18.139--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:18.139--ServerSession(1190566357)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:18.151--ServerSession(1190566357)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field author] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:18.151--ServerSession(1190566357)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [author] is being defaulted to: AUTHOR_AISID.
+[EL Config]: metadata: 2023-03-24 23:46:18.152--ServerSession(1190566357)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field supervisor] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:18.152--ServerSession(1190566357)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [supervisor] is being defaulted to: SUPERVISOR_AISID.
+[EL Info]: 2023-03-24 23:46:18.384--ServerSession(1190566357)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-03-24 23:46:18.391--ServerSession(1190566357)--Connection(1450712470)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-03-24 23:46:19.314--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Warning]: metadata: 2023-03-24 23:46:19.324--ServerSession(1190566357)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [thesis] for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-03-24 23:46:19.417--ServerSession(1190566357)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-03-24 23:46:19.439--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:19.452--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.463--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "thesis" does not exist
+Error Code: 0
+Call: ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+Query: DataModifyQuery(sql="ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID")
+[EL Fine]: sql: 2023-03-24 23:46:19.465--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:19.468--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.47--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "thesis" does not exist
+Error Code: 0
+Call: ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+Query: DataModifyQuery(sql="ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID")
+[EL Fine]: sql: 2023-03-24 23:46:19.47--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.472--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.474--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.475--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.476--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.478--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.478--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.48--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.482--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "thesis" does not exist
+Error Code: 0
+Call: DROP TABLE THESIS CASCADE
+Query: DataModifyQuery(sql="DROP TABLE THESIS CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.482--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.484--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.486--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.486--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.487--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.489--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.489--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.492--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.493--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "thesis" does not exist
+Error Code: 0
+Call: DROP TABLE THESIS CASCADE
+Query: DataModifyQuery(sql="DROP TABLE THESIS CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.493--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.495--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.496--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.497--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.5--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.501--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.502--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.503--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.506--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "thesis" does not exist
+Error Code: 0
+Call: DROP TABLE THESIS CASCADE
+Query: DataModifyQuery(sql="DROP TABLE THESIS CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.506--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.507--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.509--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.509--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.511--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.513--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.513--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.515--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.517--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "thesis" does not exist
+Error Code: 0
+Call: DROP TABLE THESIS CASCADE
+Query: DataModifyQuery(sql="DROP TABLE THESIS CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.518--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.52--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.522--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.523--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.525--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.526--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.527--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.529--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.532--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "thesis" does not exist
+Error Code: 0
+Call: DROP TABLE THESIS CASCADE
+Query: DataModifyQuery(sql="DROP TABLE THESIS CASCADE")
+[EL Fine]: sql: 2023-03-24 23:46:19.539--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:19.542--ServerSession(1190566357)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:19.543--ServerSession(1190566357)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "sequence" does not exist
+  Position: 13
+Error Code: 0
+Call: DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+Query: DataModifyQuery(sql="DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'")
+[EL Fine]: sql: 2023-03-24 23:46:19.547--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, NAME VARCHAR(255) NOT NULL, STUDYPROGRAMME VARCHAR(255), TERM INTEGER, YEAR INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:19.578--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, DEPARTMENT VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, INSTITUTE VARCHAR(255), NAME VARCHAR(255) NOT NULL, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:19.602--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--CREATE TABLE THESIS (ID BIGINT NOT NULL, DEADLINE DATE, DEPARTMENT VARCHAR(255), DESCRIPTION VARCHAR(255), PUBLISHEDON DATE NOT NULL, REGISTRATIONNUMBER VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TITLE VARCHAR(255) NOT NULL, TYPE VARCHAR(255), SUPERVISOR_AISID BIGINT NOT NULL, AUTHOR_AISID BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-03-24 23:46:19.621--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_SUPERVISOR_AISID FOREIGN KEY (SUPERVISOR_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:19.629--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_AUTHOR_AISID FOREIGN KEY (AUTHOR_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:19.637--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT DECIMAL(38), PRIMARY KEY (SEQ_NAME))
+[EL Fine]: sql: 2023-03-24 23:46:19.648--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:19.653--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-03-24 23:46:19.660  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+2023-03-24 23:46:19.660  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found class sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+2023-03-24 23:46:19.660  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for implementation of Thesis entity class
+2023-03-24 23:46:19.669  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found entity class sk.stuba.fei.uim.vsa.pr1.solution.Thesis
+2023-03-24 23:46:19.669  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for implementation of Teacher entity class
+2023-03-24 23:46:19.669  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found entity class sk.stuba.fei.uim.vsa.pr1.solution.Teacher
+2023-03-24 23:46:19.669  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for implementation of Student entity class
+2023-03-24 23:46:19.669  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found entity class sk.stuba.fei.uim.vsa.pr1.solution.Student
+2023-03-24 23:46:19.670  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for identifier property/field of type Long for entity class sk.stuba.fei.uim.vsa.pr1.solution.Thesis
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found identifier for class sk.stuba.fei.uim.vsa.pr1.solution.Thesis as field 'id'
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for identifier property/field of type Long for entity class sk.stuba.fei.uim.vsa.pr1.solution.Teacher
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found identifier for class sk.stuba.fei.uim.vsa.pr1.solution.Teacher as field 'aisId'
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for identifier property/field of type Long for entity class sk.stuba.fei.uim.vsa.pr1.solution.Student
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found identifier for class sk.stuba.fei.uim.vsa.pr1.solution.Student as field 'aisId'
+2023-03-24 23:46:19.674  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for date type field in sk.stuba.fei.uim.vsa.pr1.solution.Thesis class
+2023-03-24 23:46:19.678  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found field for type 'java.util.Date' in class sk.stuba.fei.uim.vsa.pr1.solution.Thesis
+2023-03-24 23:46:19.678  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found date fields deadline, publishedOn in class sk.stuba.fei.uim.vsa.pr1.solution.Thesis
+2023-03-24 23:46:19.678  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Searching for status field in class sk.stuba.fei.uim.vsa.pr1.solution.Thesis
+2023-03-24 23:46:19.689  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Checking if student is set as developer in pom.xml
+2023-03-24 23:46:19.692  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found student id <id>70127</id>
+2023-03-24 23:46:19.692  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found student name <name>Milan Mladoniczky</name>
+2023-03-24 23:46:19.692  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Found student email <email>milan.mladoniczky@stuba.sk</email>
+2023-03-24 23:46:19.704  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Running basic tests of creating instances of entity classes
+2023-03-24 23:46:19.706  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Checking for correct name in persistence.xml
+2023-03-24 23:46:19.713  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.SanityCheckTest  : Cleaning after the test
+[EL Fine]: connection: 2023-03-24 23:46:19.714--ServerSession(1190566357)--Connection(1684541910)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2023-03-24 23:46:19.715--ServerSession(1190566357)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 logout successful
+[EL Fine]: connection: 2023-03-24 23:46:19.715--ServerSession(1190566357)--Connection(1450712470)--Thread(Thread[main,5,main])--disconnect
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.384 s - in sk.stuba.fei.uim.vsa.pr1.SanityCheckTest
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.StudentTest
+2023-03-24 23:46:19.733  INFO --- [           main] org.reflections.Reflections              : Reflections took 13 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: moxy: 2023-03-24 23:46:19.744--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@299270eb
+[EL Fine]: server: 2023-03-24 23:46:19.747--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-03-24 23:46:19.766--ServerSession(999334666)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:19.766--ServerSession(999334666)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field supervisedTheses] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:19.768--ServerSession(999334666)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:19.768--ServerSession(999334666)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field author] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Student.
+[EL Config]: metadata: 2023-03-24 23:46:19.769--ServerSession(999334666)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field supervisor] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:19.769--ServerSession(999334666)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:19.77--ServerSession(999334666)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field thesis] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:19.77--ServerSession(999334666)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [institute] is being defaulted to: INSTITUTE.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:19.771--ServerSession(999334666)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is being defaulted to: Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [registrationNumber] is being defaulted to: REGISTRATIONNUMBER.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [publishedOn] is being defaulted to: PUBLISHEDON.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [type] is being defaulted to: TYPE.
+[EL Config]: metadata: 2023-03-24 23:46:19.772--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [deadline] is being defaulted to: DEADLINE.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [studyProgramme] is being defaulted to: STUDYPROGRAMME.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [year] is being defaulted to: YEAR.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [term] is being defaulted to: TERM.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:19.774--ServerSession(999334666)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:19.775--ServerSession(999334666)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field author] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:19.775--ServerSession(999334666)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [author] is being defaulted to: AUTHOR_AISID.
+[EL Config]: metadata: 2023-03-24 23:46:19.775--ServerSession(999334666)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field supervisor] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:19.775--ServerSession(999334666)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [supervisor] is being defaulted to: SUPERVISOR_AISID.
+[EL Info]: 2023-03-24 23:46:19.781--ServerSession(999334666)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-03-24 23:46:19.781--ServerSession(999334666)--Connection(1912172027)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-03-24 23:46:19.806--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Warning]: metadata: 2023-03-24 23:46:19.807--ServerSession(999334666)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [thesis] for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-03-24 23:46:19.811--ServerSession(999334666)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-03-24 23:46:19.812--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:19.824--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:19.829--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.835--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.839--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:19.847--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:19.856--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, NAME VARCHAR(255) NOT NULL, STUDYPROGRAMME VARCHAR(255), TERM INTEGER, YEAR INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:19.878--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, DEPARTMENT VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, INSTITUTE VARCHAR(255), NAME VARCHAR(255) NOT NULL, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:19.902--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--CREATE TABLE THESIS (ID BIGINT NOT NULL, DEADLINE DATE, DEPARTMENT VARCHAR(255), DESCRIPTION VARCHAR(255), PUBLISHEDON DATE NOT NULL, REGISTRATIONNUMBER VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TITLE VARCHAR(255) NOT NULL, TYPE VARCHAR(255), SUPERVISOR_AISID BIGINT NOT NULL, AUTHOR_AISID BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-03-24 23:46:19.92--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_SUPERVISOR_AISID FOREIGN KEY (SUPERVISOR_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:19.925--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_AUTHOR_AISID FOREIGN KEY (AUTHOR_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:19.932--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:19.933--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-03-24 23:46:19.938  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+2023-03-24 23:46:20.096  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.135--ClientSession(1169894049)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:20.165--ClientSession(1069571746)--Connection(1235381529)--Thread(Thread[main,5,main])--UPDATE STUDENT SET NAME = ? WHERE (AISID = ?)
+	bind => [QVBJNDc=, 70127]
+2023-03-24 23:46:20.275  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.276--ClientSession(19578363)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:20.285--ClientSession(99295602)--Connection(1235381529)--Thread(Thread[main,5,main])--DELETE FROM STUDENT WHERE (AISID = ?)
+	bind => [70127]
+[EL Fine]: sql: 2023-03-24 23:46:20.294--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (AUTHOR_AISID = ?)
+	bind => [70127]
+[EL Fine]: sql: 2023-03-24 23:46:20.298--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR FROM STUDENT WHERE (AISID = ?)
+	bind => [70127]
+2023-03-24 23:46:20.392  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.393--ClientSession(318755294)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+2023-03-24 23:46:20.400  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 665434
+[EL Fine]: sql: 2023-03-24 23:46:20.401--ClientSession(1820355723)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtests2@stuba.sk, Test-Student The Second, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:20.407--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR FROM STUDENT
+2023-03-24 23:46:20.494  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.495--ClientSession(542895457)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+2023-03-24 23:46:20.584  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.584--ClientSession(296974277)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+2023-03-24 23:46:20.668  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:20.668--ClientSession(1881949035)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+2023-03-24 23:46:20.674  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 665434
+[EL Fine]: sql: 2023-03-24 23:46:20.674--ClientSession(603184112)--Connection(1235381529)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtest@stuba.sk, Test-Student The Second, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:20.677--ClientSession(603184112)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:20.678--UnitOfWork(836170750)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "student_email_key"
+  Detail: Key (email)=(xtest@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtest@stuba.sk, Test-Student The Second, null, null, null]
+Query: InsertObjectQuery(Student(aisId=665434, name=Test-Student The Second, email=xtest@stuba.sk, year=null, term=null, studyProgramme=null, thesis=null))
+[EL Fine]: connection: 2023-03-24 23:46:20.68--ServerSession(999334666)--Connection(1235381529)--Thread(Thread[main,5,main])--disconnect
+2023-03-24 23:46:20.681 ERROR --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "student_email_key"
+  Detail: Key (email)=(xtest@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtest@stuba.sk, Test-Student The Second, null, null, null]
+Query: InsertObjectQuery(Student(aisId=665434, name=Test-Student The Second, email=xtest@stuba.sk, year=null, term=null, studyProgramme=null, thesis=null))
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "student_email_key"
+  Detail: Key (email)=(xtest@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtest@stuba.sk, Test-Student The Second, null, null, null]
+Query: InsertObjectQuery(Student(aisId=665434, name=Test-Student The Second, email=xtest@stuba.sk, year=null, term=null, studyProgramme=null, thesis=null))
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:161)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.create(ThesisService.java:295)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.createStudent(ThesisService.java:29)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.createStudent(ThesisService.java:20)
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST06_emailShouldBeUnique(StudentTest.java:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.eclipse.persistence.exceptions.DatabaseException: 
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "student_email_key"
+  Detail: Key (email)=(xtest@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [665434, xtest@stuba.sk, Test-Student The Second, null, null, null]
+Query: InsertObjectQuery(Student(aisId=665434, name=Test-Student The Second, email=xtest@stuba.sk, year=null, term=null, studyProgramme=null, thesis=null))
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1666)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:915)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:979)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:640)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2105)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:313)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:428)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:168)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:183)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:515)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:85)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:95)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:327)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:60)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:110)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:87)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3004)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1898)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1880)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1830)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:229)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:128)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4409)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1503)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1593)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:280)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1230)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:136)
+	... 69 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "student_email_key"
+  Detail: Key (email)=(xtest@stuba.sk) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:907)
+	... 100 common frames omitted
+[EL Fine]: connection: 2023-03-24 23:46:20.686--ServerSession(999334666)--Connection(1912172027)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2023-03-24 23:46:20.686--ServerSession(999334666)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 logout successful
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.024 s - in sk.stuba.fei.uim.vsa.pr1.StudentTest
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.TeacherTest
+2023-03-24 23:46:20.701  INFO --- [           main] org.reflections.Reflections              : Reflections took 11 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: moxy: 2023-03-24 23:46:20.708--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@2459319c
+[EL Fine]: server: 2023-03-24 23:46:20.71--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-03-24 23:46:20.726--ServerSession(268086000)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:20.727--ServerSession(268086000)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field supervisedTheses] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:20.728--ServerSession(268086000)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:20.728--ServerSession(268086000)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field author] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Student.
+[EL Config]: metadata: 2023-03-24 23:46:20.729--ServerSession(268086000)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field supervisor] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:20.73--ServerSession(268086000)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:20.73--ServerSession(268086000)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field thesis] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:20.73--ServerSession(268086000)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:20.73--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [institute] is being defaulted to: INSTITUTE.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is being defaulted to: Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [registrationNumber] is being defaulted to: REGISTRATIONNUMBER.
+[EL Config]: metadata: 2023-03-24 23:46:20.731--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2023-03-24 23:46:20.732--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [publishedOn] is being defaulted to: PUBLISHEDON.
+[EL Config]: metadata: 2023-03-24 23:46:20.732--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-03-24 23:46:20.732--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: metadata: 2023-03-24 23:46:20.732--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [type] is being defaulted to: TYPE.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [deadline] is being defaulted to: DEADLINE.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [studyProgramme] is being defaulted to: STUDYPROGRAMME.
+[EL Config]: metadata: 2023-03-24 23:46:20.733--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [year] is being defaulted to: YEAR.
+[EL Config]: metadata: 2023-03-24 23:46:20.734--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:20.734--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [term] is being defaulted to: TERM.
+[EL Config]: metadata: 2023-03-24 23:46:20.734--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:20.734--ServerSession(268086000)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:20.735--ServerSession(268086000)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field author] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:20.735--ServerSession(268086000)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [author] is being defaulted to: AUTHOR_AISID.
+[EL Config]: metadata: 2023-03-24 23:46:20.735--ServerSession(268086000)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field supervisor] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:20.735--ServerSession(268086000)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [supervisor] is being defaulted to: SUPERVISOR_AISID.
+[EL Info]: 2023-03-24 23:46:20.738--ServerSession(268086000)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-03-24 23:46:20.738--ServerSession(268086000)--Connection(579660439)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-03-24 23:46:20.761--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Warning]: metadata: 2023-03-24 23:46:20.762--ServerSession(268086000)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [thesis] for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-03-24 23:46:20.766--ServerSession(268086000)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-03-24 23:46:20.767--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:20.78--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:20.785--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:20.789--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:20.794--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:20.801--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:20.808--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, NAME VARCHAR(255) NOT NULL, STUDYPROGRAMME VARCHAR(255), TERM INTEGER, YEAR INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:20.835--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, DEPARTMENT VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, INSTITUTE VARCHAR(255), NAME VARCHAR(255) NOT NULL, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:20.858--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--CREATE TABLE THESIS (ID BIGINT NOT NULL, DEADLINE DATE, DEPARTMENT VARCHAR(255), DESCRIPTION VARCHAR(255), PUBLISHEDON DATE NOT NULL, REGISTRATIONNUMBER VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TITLE VARCHAR(255) NOT NULL, TYPE VARCHAR(255), SUPERVISOR_AISID BIGINT NOT NULL, AUTHOR_AISID BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-03-24 23:46:20.877--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_SUPERVISOR_AISID FOREIGN KEY (SUPERVISOR_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:20.883--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_AUTHOR_AISID FOREIGN KEY (AUTHOR_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:20.89--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:20.892--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-03-24 23:46:20.897  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+[EL Fine]: sql: 2023-03-24 23:46:21.007--ClientSession(715534618)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.015--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (SUPERVISOR_AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.02--ClientSession(1309956586)--Connection(2016146960)--Thread(Thread[main,5,main])--DELETE FROM TEACHER WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.035--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--SELECT AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME FROM TEACHER WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.123--ClientSession(727273502)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.13--ClientSession(1472494238)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher.second@stuba.sk, Mathematics, Test-Teacher the Second]
+[EL Fine]: sql: 2023-03-24 23:46:21.137--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--SELECT AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME FROM TEACHER
+[EL Fine]: sql: 2023-03-24 23:46:21.22--ClientSession(448782465)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.308--ClientSession(492045670)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.313--ClientSession(252247502)--Connection(2016146960)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher@stuba.sk, Mathematics, Test-Teacher the Second]
+[EL Fine]: sql: 2023-03-24 23:46:21.316--ClientSession(252247502)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-03-24 23:46:21.317--UnitOfWork(1809456409)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "teacher_email_key"
+  Detail: Key (email)=(test.teacher@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher@stuba.sk, Mathematics, Test-Teacher the Second]
+Query: InsertObjectQuery(Teacher(aisId=999234, name=Test-Teacher the Second, email=test.teacher@stuba.sk, institute=Mathematics, department=Mathematics, supervisedTheses={[]}))
+[EL Fine]: connection: 2023-03-24 23:46:21.318--ServerSession(268086000)--Connection(2016146960)--Thread(Thread[main,5,main])--disconnect
+2023-03-24 23:46:21.320 ERROR --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "teacher_email_key"
+  Detail: Key (email)=(test.teacher@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher@stuba.sk, Mathematics, Test-Teacher the Second]
+Query: InsertObjectQuery(Teacher(aisId=999234, name=Test-Teacher the Second, email=test.teacher@stuba.sk, institute=Mathematics, department=Mathematics, supervisedTheses={[]}))
+javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "teacher_email_key"
+  Detail: Key (email)=(test.teacher@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher@stuba.sk, Mathematics, Test-Teacher the Second]
+Query: InsertObjectQuery(Teacher(aisId=999234, name=Test-Teacher the Second, email=test.teacher@stuba.sk, institute=Mathematics, department=Mathematics, supervisedTheses={[]}))
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:161)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.create(ThesisService.java:295)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.createTeacher(ThesisService.java:74)
+	at sk.stuba.fei.uim.vsa.pr1.solution.ThesisService.createTeacher(ThesisService.java:20)
+	at sk.stuba.fei.uim.vsa.pr1.TeacherTest.TE06_emailShouldBeUnique(TeacherTest.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.eclipse.persistence.exceptions.DatabaseException: 
+Internal Exception: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "teacher_email_key"
+  Detail: Key (email)=(test.teacher@stuba.sk) already exists.
+Error Code: 0
+Call: INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher@stuba.sk, Mathematics, Test-Teacher the Second]
+Query: InsertObjectQuery(Teacher(aisId=999234, name=Test-Teacher the Second, email=test.teacher@stuba.sk, institute=Mathematics, department=Mathematics, supervisedTheses={[]}))
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1666)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:915)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:979)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:640)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2105)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:313)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:275)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:261)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:428)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:168)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:183)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:515)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:85)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:95)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:327)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:60)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:913)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:812)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:110)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:87)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:3004)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1898)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1880)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1830)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:229)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:128)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4409)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1503)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1593)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:280)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1230)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:136)
+	... 69 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "teacher_email_key"
+  Detail: Key (email)=(test.teacher@stuba.sk) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:907)
+	... 100 common frames omitted
+[EL Fine]: connection: 2023-03-24 23:46:21.405--ServerSession(268086000)--Connection(1737796619)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-03-24 23:46:21.421--ServerSession(268086000)--Connection(2078741622)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Fine]: sql: 2023-03-24 23:46:21.422--ClientSession(1555413896)--Connection(2078741622)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.509--ServerSession(268086000)--Thread(Thread[main,5,main])--SELECT 1
+[EL Fine]: sql: 2023-03-24 23:46:21.51--ClientSession(1730129134)--Connection(2078741622)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.517--ClientSession(551797833)--Connection(2078741622)--Thread(Thread[main,5,main])--UPDATE TEACHER SET NAME = ? WHERE (AISID = ?)
+	bind => [VUlNMjI=, 80123]
+[EL Fine]: connection: 2023-03-24 23:46:21.524--ServerSession(268086000)--Connection(579660439)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2023-03-24 23:46:21.524--ServerSession(268086000)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 logout successful
+[EL Fine]: connection: 2023-03-24 23:46:21.524--ServerSession(268086000)--Connection(2078741622)--Thread(Thread[main,5,main])--disconnect
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.747 s - in sk.stuba.fei.uim.vsa.pr1.TeacherTest
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.ThesisTest
+2023-03-24 23:46:21.539  INFO --- [           main] org.reflections.Reflections              : Reflections took 12 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: moxy: 2023-03-24 23:46:21.547--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@56f521c6
+[EL Fine]: server: 2023-03-24 23:46:21.549--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-03-24 23:46:21.564--ServerSession(1745512157)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:21.565--ServerSession(1745512157)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field supervisedTheses] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:21.566--ServerSession(1745512157)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:21.566--ServerSession(1745512157)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field author] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Student.
+[EL Config]: metadata: 2023-03-24 23:46:21.568--ServerSession(1745512157)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field supervisor] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:21.569--ServerSession(1745512157)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-03-24 23:46:21.569--ServerSession(1745512157)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field thesis] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:21.569--ServerSession(1745512157)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-03-24 23:46:21.569--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [institute] is being defaulted to: INSTITUTE.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is being defaulted to: Thesis.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [registrationNumber] is being defaulted to: REGISTRATIONNUMBER.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [publishedOn] is being defaulted to: PUBLISHEDON.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: metadata: 2023-03-24 23:46:21.57--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [type] is being defaulted to: TYPE.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [deadline] is being defaulted to: DEADLINE.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [studyProgramme] is being defaulted to: STUDYPROGRAMME.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [year] is being defaulted to: YEAR.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-03-24 23:46:21.571--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [term] is being defaulted to: TERM.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field author] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [author] is being defaulted to: AUTHOR_AISID.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field supervisor] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-03-24 23:46:21.572--ServerSession(1745512157)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [supervisor] is being defaulted to: SUPERVISOR_AISID.
+[EL Info]: 2023-03-24 23:46:21.576--ServerSession(1745512157)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-03-24 23:46:21.576--ServerSession(1745512157)--Connection(1994249754)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-03-24 23:46:21.594--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Warning]: metadata: 2023-03-24 23:46:21.595--ServerSession(1745512157)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [thesis] for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-03-24 23:46:21.598--ServerSession(1745512157)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-03-24 23:46:21.599--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:21.609--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+[EL Fine]: sql: 2023-03-24 23:46:21.614--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:21.619--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:21.624--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-03-24 23:46:21.63--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:21.638--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, NAME VARCHAR(255) NOT NULL, STUDYPROGRAMME VARCHAR(255), TERM INTEGER, YEAR INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:21.659--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, DEPARTMENT VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, INSTITUTE VARCHAR(255), NAME VARCHAR(255) NOT NULL, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-03-24 23:46:21.679--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--CREATE TABLE THESIS (ID BIGINT NOT NULL, DEADLINE DATE, DEPARTMENT VARCHAR(255), DESCRIPTION VARCHAR(255), PUBLISHEDON DATE NOT NULL, REGISTRATIONNUMBER VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TITLE VARCHAR(255) NOT NULL, TYPE VARCHAR(255), SUPERVISOR_AISID BIGINT NOT NULL, AUTHOR_AISID BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-03-24 23:46:21.697--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_SUPERVISOR_AISID FOREIGN KEY (SUPERVISOR_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:21.703--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_AUTHOR_AISID FOREIGN KEY (AUTHOR_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-03-24 23:46:21.709--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-03-24 23:46:21.71--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-03-24 23:46:21.715  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+[EL Fine]: sql: 2023-03-24 23:46:21.816--ClientSession(27818833)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.823--ClientSession(1538593345)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [50, SEQ_GEN]
+[EL Fine]: sql: 2023-03-24 23:46:21.825--ClientSession(1538593345)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [SEQ_GEN]
+[EL Fine]: sql: 2023-03-24 23:46:21.831--ClientSession(1538593345)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [1, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-94622, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:21.838--ClientSession(118456878)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [999234, Mathematics, test.teacher.second@stuba.sk, Mathematics, Test-Teacher the Second]
+[EL Fine]: sql: 2023-03-24 23:46:21.845--ClientSession(1508130444)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET SUPERVISOR_AISID = ? WHERE (ID = ?)
+	bind => [999234, 1]
+[EL Fine]: sql: 2023-03-24 23:46:21.941--ClientSession(501261420)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:21.948--ClientSession(345893819)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [2, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-8048, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:21.954--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (SUPERVISOR_AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.959--ClientSession(1446238973)--Connection(1066575950)--Thread(Thread[main,5,main])--DELETE FROM THESIS WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2023-03-24 23:46:21.965--ClientSession(688113407)--Connection(1066575950)--Thread(Thread[main,5,main])--DELETE FROM TEACHER WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.97--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME FROM TEACHER WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:21.972--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2023-03-24 23:46:22.055--ClientSession(2005762793)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.061--ClientSession(956429999)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-27659, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+2023-03-24 23:46:22.067  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:22.067--ClientSession(1907178890)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.075--ClientSession(1262477422)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET STATUS = ?, AUTHOR_AISID = ? WHERE (ID = ?)
+	bind => [IN_PROGRESS, 70127, 3]
+[EL Fine]: sql: 2023-03-24 23:46:22.083--ClientSession(2054997292)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET STATUS = ? WHERE (ID = ?)
+	bind => [SUBMITTED, 3]
+[EL Fine]: sql: 2023-03-24 23:46:22.172--ClientSession(1917149817)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.178--ClientSession(201069753)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-60323, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+2023-03-24 23:46:22.186  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:22.186--ClientSession(19467337)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.194--ClientSession(462911221)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET STATUS = ?, AUTHOR_AISID = ? WHERE (ID = ?)
+	bind => [IN_PROGRESS, 70127, 4]
+[EL Fine]: sql: 2023-03-24 23:46:22.282--ClientSession(1463823265)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.29--ClientSession(723689932)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [5, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-26535, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+2023-03-24 23:46:22.297  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:22.298--ClientSession(271514713)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.305--ClientSession(443348849)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET STATUS = ?, AUTHOR_AISID = ? WHERE (ID = ?)
+	bind => [IN_PROGRESS, 70127, 5]
+[EL Fine]: sql: 2023-03-24 23:46:22.312--ClientSession(150079886)--Connection(1066575950)--Thread(Thread[main,5,main])--DELETE FROM THESIS WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2023-03-24 23:46:22.318--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2023-03-24 23:46:22.399--ClientSession(9054826)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.405--ClientSession(1209962934)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [6, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-69922, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.412--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS
+[EL Fine]: sql: 2023-03-24 23:46:22.494--ClientSession(978599729)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.501--ClientSession(2130606983)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [7, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-55611, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.507--ClientSession(1863557065)--Connection(1066575950)--Thread(Thread[main,5,main])--DELETE FROM THESIS WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2023-03-24 23:46:22.513--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2023-03-24 23:46:22.591--ClientSession(366752671)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.598--ClientSession(906370291)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-24615, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.687--ClientSession(1446511153)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.693--ClientSession(1041255755)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [9, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-17570, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+2023-03-24 23:46:22.699  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 70127
+[EL Fine]: sql: 2023-03-24 23:46:22.699--ClientSession(314966354)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [70127, xtest@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.705--ClientSession(1048332309)--Connection(1066575950)--Thread(Thread[main,5,main])--UPDATE THESIS SET STATUS = ?, AUTHOR_AISID = ? WHERE (ID = ?)
+	bind => [IN_PROGRESS, 70127, 9]
+[EL Fine]: sql: 2023-03-24 23:46:22.711--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (AUTHOR_AISID = ?)
+	bind => [70127]
+[EL Fine]: sql: 2023-03-24 23:46:22.796--ClientSession(638204510)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.803--ClientSession(1681434622)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [10, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-81393, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-03-24 23:46:22.809--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--SELECT ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID FROM THESIS WHERE (SUPERVISOR_AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-03-24 23:46:22.887--ClientSession(1151772302)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-03-24 23:46:22.897--ClientSession(1241395522)--Connection(1066575950)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [11, 2023-06-24, Software engineering, Some description of the thesis, 2023-03-24, FEI-64304, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: connection: 2023-03-24 23:46:22.904--ServerSession(1745512157)--Connection(1066575950)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2023-03-24 23:46:22.904--ServerSession(1745512157)--Thread(Thread[main,5,main])--/file:/C:/Users/mlado/Documents/Projects/STUBA/VSA 23/vsa-testing-module/localTestRun/tested/target/classes/_vsa-project-1 logout successful
+[EL Fine]: connection: 2023-03-24 23:46:22.904--ServerSession(1745512157)--Connection(1994249754)--Thread(Thread[main,5,main])--disconnect
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.373 s - in sk.stuba.fei.uim.vsa.pr1.ThesisTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.533 s
+[INFO] Finished at: 2023-03-24T23:46:23+01:00
+[INFO] ------------------------------------------------------------------------
