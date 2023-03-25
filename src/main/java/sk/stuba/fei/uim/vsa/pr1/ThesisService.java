@@ -243,45 +243,48 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     @Override
     public Teacher updateTeacher(Teacher teacher) {
         if (teacher == null) {
-            throw new IllegalArgumentException("Teacher cannot be null");
+            throw new IllegalArgumentException("teacher cannot be null");
         }
-        if (teacher.getAisId() == null) {
-            throw new IllegalArgumentException("Teacher id cannot be null");
-        }
-        EntityManager em = emf.createEntityManager();
-        try {
-            em.getTransaction().begin();
-            Teacher existingTeacher = em.find(Teacher.class, teacher.getAisId());
 
-            if (existingTeacher == null) {
+        if (teacher.getAisId() == null) {
+            throw new IllegalArgumentException("teacherId cannot be null");
+        }
+
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        try {
+            Teacher te = em.find(Teacher.class, teacher.getAisId());
+            if (te == null) {
                 return null;
             }
 
-            List<Assignment> existingThesisList = existingTeacher.getAssignmentList();
+            if (!Objects.equals(te.getEmail(), teacher.getEmail())) {
+                TypedQuery<Teacher> query = em.createQuery("SELECT t FROM Teacher t WHERE t.email = :email", Teacher.class);
+                query.setParameter("email", teacher.getEmail());
+                List<Teacher> teachers = query.getResultList();
+                if (!teachers.isEmpty()) {
+                    return null;
+                }
+            }
 
+            // Update teacher
             Teacher updatedTeacher = em.merge(teacher);
 
-            if (updatedTeacher.getAssignmentList() != null) {
-                for (Assignment thesis : updatedTeacher.getAssignmentList()) {
-                    thesis.setPracovisko(updatedTeacher.getInstitut());
-                    em.merge(thesis);
+            // Update thesis assignments
+            List<Assignment> existingThesisList = te.getAssignmentList();
+            List<Assignment> updatedThesisList = updatedTeacher.getAssignmentList();
+
+            if (updatedThesisList != null) {
+                for (Assignment assignments : updatedThesisList) {
+                    assignments.setPracovisko(updatedTeacher.getInstitut());
+                    assignments.setTeacher(updatedTeacher);
+                    em.merge(assignments);
                 }
             }
 
-            if (existingThesisList != null) {
-                existingThesisList.removeAll(updatedTeacher.getAssignmentList());
-                for (Assignment removedThesis : existingThesisList) {
-                    Student student = removedThesis.getStudent();
-                    if (student != null) {
-                        student.setAssignment(null);
-                        em.merge(student);
-                    }
-                    em.remove(em.contains(removedThesis) ? removedThesis : em.merge(removedThesis));
-                }
-            }
-
-            if (existingThesisList != null) {
-                List<Assignment> addedThesisList = new ArrayList<>(updatedTeacher.getAssignmentList());
+            if (updatedThesisList != null) {
+                List<Assignment> addedThesisList = new ArrayList<>(updatedThesisList);
+                assert existingThesisList != null;
                 addedThesisList.removeAll(existingThesisList);
                 for (Assignment addedThesis : addedThesisList) {
                     makeThesisAssignment(updatedTeacher.getAisId(), addedThesis.getNazov(), addedThesis.getTyp().name(), addedThesis.getPopis());
@@ -291,10 +294,14 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             em.getTransaction().commit();
             return updatedTeacher;
         } catch (Exception e) {
-            em.getTransaction().rollback();
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
             return null;
-        } finally {
-            em.close();
+        }finally {
+            if(em != null) {
+                em.close();
+            }
         }
     }
 
