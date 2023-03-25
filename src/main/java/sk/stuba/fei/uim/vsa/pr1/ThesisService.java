@@ -39,7 +39,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 return null;
             }
             Teacher teacher = em.find(Teacher.class, aisId);
-            if(teacher != null) {
+            if (teacher != null) {
                 return null;
             }
             Student student = new Student(aisId, name, email);
@@ -111,9 +111,6 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             Assignment assignment = new Assignment();
             if(student.getAssignment() != null) {
                 assignment = em.find(Assignment.class, student.getAssignment().getId());
-                if(assignment == null) {
-                    return null;
-                }
             }
 
             em.getTransaction().begin();
@@ -123,8 +120,10 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             student1.setAssignment(student.getAssignment());
             student1.setEmail(student.getEmail());
             student1.setMeno(student.getMeno());
-            if(assignment.getId() != null) {
-                assignment.setStudent(student1);
+            if(assignment != null) {
+                if(assignment.getId() != null) {
+                    assignment.setStudent(student1);
+                }
             }
             em.getTransaction().commit();
             return student1;
@@ -141,8 +140,15 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     @Override
     public List<Student> getStudents() {
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Student> studentTypedQuery = em.createQuery("SELECT k from Student k", Student.class);
-        return studentTypedQuery.getResultList();
+        try {
+            TypedQuery<Student> studentTypedQuery = em.createQuery("SELECT k from Student k", Student.class);
+            return studentTypedQuery.getResultList();
+        }
+        catch (Exception e) {
+            return new ArrayList<>();
+        }finally {
+            em.close();
+        }
     }
 
     @Override
@@ -153,6 +159,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
         EntityManager em = emf.createEntityManager();
         try {
             Student student = em.getReference(Student.class, id);
+            if(student == null) {
+                return null;
+            }
             TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("SELECT a FROM Assignment a WHERE a.student.aisId = :student", Assignment.class);
             assignmentTypedQuery.setParameter("student", student.getAisId());
             List<Assignment> assignmentList = assignmentTypedQuery.getResultList();
@@ -253,12 +262,12 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         try {
-            Teacher te = em.find(Teacher.class, teacher.getAisId());
-            if (te == null) {
+            Teacher teacher1 = em.find(Teacher.class, teacher.getAisId());
+            if (teacher1 == null) {
                 return null;
             }
 
-            if (!Objects.equals(te.getEmail(), teacher.getEmail())) {
+            if (!Objects.equals(teacher1.getEmail(), teacher.getEmail())) {
                 TypedQuery<Teacher> query = em.createQuery("SELECT t FROM Teacher t WHERE t.email = :email", Teacher.class);
                 query.setParameter("email", teacher.getEmail());
                 List<Teacher> teachers = query.getResultList();
@@ -266,12 +275,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     return null;
                 }
             }
-
-            // Update teacher
             Teacher updatedTeacher = em.merge(teacher);
-
-            // Update thesis assignments
-            List<Assignment> existingThesisList = te.getAssignmentList();
+            List<Assignment> existingThesisList = teacher1.getAssignmentList();
             List<Assignment> updatedThesisList = updatedTeacher.getAssignmentList();
 
             if (updatedThesisList != null) {
@@ -308,8 +313,16 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     @Override
     public List<Teacher> getTeachers() {
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Teacher> pedagogTypedQuery = em.createQuery("SELECT p from Teacher p", Teacher.class);
-        return pedagogTypedQuery.getResultList();
+        try {
+            TypedQuery<Teacher> pedagogicTypedQuery = em.createQuery("SELECT p from Teacher p", Teacher.class);
+            return pedagogicTypedQuery.getResultList();
+        }catch (Exception e) {
+            return new ArrayList<>();
+        }finally {
+            if(em != null) {
+                em.close();
+            }
+        }
     }
 
     @Override
@@ -497,8 +510,16 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     @Override
     public List<Assignment> getTheses() {
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("SELECT a from Assignment a", Assignment.class);
-        return assignmentTypedQuery.getResultList();
+        try {
+            TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("SELECT a from Assignment a", Assignment.class);
+            return assignmentTypedQuery.getResultList();
+        } catch (Exception e) {
+            return new ArrayList<>();
+        } finally {
+            if(em != null) {
+                em.close();
+            }
+        }
     }
 
     @Override
@@ -573,9 +594,6 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
         if (thesis == null || thesis.getId() == null) {
             throw new IllegalArgumentException("Thesis or thesis id cannot be null");
         }
-
-        // CHECK IF DATES ARE CORRECT and datumZverejnenia is before odovzdaniePrace
-
         if (thesis.getDatumZverejnenia() != null && thesis.getOdovzdaniePrace() != null) {
             if (thesis.getDatumZverejnenia().isAfter(thesis.getOdovzdaniePrace())) {
                 return null;
@@ -624,5 +642,4 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             em.close();
         }
     }
-
 }
