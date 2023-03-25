@@ -21,7 +21,7 @@ public class Teacher implements Serializable {
     private String email;
     private String institut;
     private String oddelenie;
-    @OneToMany(mappedBy = "teacher", orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "teacher", orphanRemoval = true)
     private List<Assignment> assignmentList;
 
     public Teacher() {
