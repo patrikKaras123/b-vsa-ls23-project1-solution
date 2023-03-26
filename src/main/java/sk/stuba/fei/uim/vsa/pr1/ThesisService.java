@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -363,15 +364,11 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             if(teacher == null) {
                 return null;
             }
-            try {
-                TypedQuery<Assignment> query = em.createQuery("SELECT s FROM Assignment s", Assignment.class);
-                for (Assignment assignment : query.getResultList()) {
-                    if (assignment.getNazov() != null && assignment.getNazov().equals(title) && assignment.getTyp().equals(Typ.valueOf(type)) && assignment.getTeacher().equals(teacher) && assignment.getPopis().equals(description)) {
-                        return null;
-                    }
+            // check if type is valid
+            if (type != null) {
+                if (!Arrays.asList(Typ.values()).contains(Typ.valueOf(type))) {
+                    return null;
                 }
-            } catch (IllegalArgumentException e) {
-                // pass
             }
             Assignment assignment = new Assignment(teacher, title, type, description);
             em.getTransaction().begin();
