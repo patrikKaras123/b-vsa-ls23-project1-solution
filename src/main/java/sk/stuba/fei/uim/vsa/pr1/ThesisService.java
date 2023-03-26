@@ -108,10 +108,24 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }else if(assignmentTypedQuery.getResultList().size() == 1) {
                 Assignment assignment = assignmentTypedQuery.getSingleResult();
                 assignment.setStudent(null);
+                assignment.setStatus(Status.Free);
             }
             Assignment assignment = new Assignment();
             if(student.getAssignment() != null) {
-                assignment = em.find(Assignment.class, student.getAssignment().getId());
+                if(student.getAssignment().getId() == null) {
+                    em.getTransaction().begin();
+                    em.persist(student.getAssignment());
+                    em.getTransaction().commit();
+                    assignment = student.getAssignment();
+                }else {
+                    assignment = em.find(Assignment.class, student.getAssignment().getId());
+                    if(assignment == null) {
+                        em.getTransaction().begin();
+                        em.persist(student.getAssignment());
+                        em.getTransaction().commit();
+                        assignment = student.getAssignment();
+                    }
+                }
             }
 
             em.getTransaction().begin();
@@ -123,7 +137,12 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             student1.setMeno(student.getMeno());
             if(assignment != null) {
                 if(assignment.getId() != null) {
+                    // Check assignment deadline and vytvorenie prace
+                    if(assignment.getOdovzdaniePrace().isBefore(assignment.getDatumZverejnenia())) {
+                        return null;
+                    }
                     assignment.setStudent(student1);
+                    assignment.setStatus(Status.Taken);
                 }
             }
             em.getTransaction().commit();
@@ -276,6 +295,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     return null;
                 }
             }
+            teacher1.setInstitut(teacher.getInstitut());
             Teacher updatedTeacher = em.merge(teacher);
             List<Assignment> existingThesisList = teacher1.getAssignmentList();
             List<Assignment> updatedThesisList = updatedTeacher.getAssignmentList();
@@ -608,6 +628,16 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             existingThesis.setStatus(thesis.getStatus());
             existingThesis.setTyp(thesis.getTyp());
             existingThesis.setTeacher(thesis.getTeacher());
+            // check if registration number is unique, but if it is the same as the existing one for current thesis ID, it is ok
+            if (thesis.getRegistracneCislo() != null) {
+                TypedQuery<Assignment> query = em.createQuery("SELECT a FROM Assignment a WHERE a.registracneCislo = :regCislo", Assignment.class);
+                query.setParameter("regCislo", thesis.getRegistracneCislo());
+                List<Assignment> resultList = query.getResultList();
+                if (resultList.size() > 0 && !resultList.get(0).getId().equals(thesis.getId())) {
+                    return null;
+                }
+            }
+            existingThesis.setRegistracneCislo(thesis.getRegistracneCislo());
             if(thesis.getStudent() != null) {
                 existingThesis.getStudent().setAssignment(existingThesis);
             }
