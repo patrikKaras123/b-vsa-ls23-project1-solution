@@ -123,6 +123,14 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     return null;
                 }
             }
+
+            //If the student has null assignment, then the set assignment is null for student and in assigment is set student to null
+            if(student.getAssignment() == null) {
+                if(student1.getAssignment() != null) {
+                    student1.getAssignment().setStudent(null);
+                    student1.getAssignment().setStatus(Status.VOLNA);
+                }
+            }
             // Update the student instance
             student1.setSemesterStudia(student.getSemesterStudia());
             student1.setRocnikStudia(student.getRocnikStudia());
