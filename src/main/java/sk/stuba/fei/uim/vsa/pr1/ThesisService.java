@@ -113,18 +113,19 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             Assignment assignment = new Assignment();
             if(student.getAssignment() != null) {
                 if(student.getAssignment().getId() == null) {
-                    em.getTransaction().begin();
-                    em.persist(student.getAssignment());
-                    em.getTransaction().commit();
-                    assignment = student.getAssignment();
+                    //em.getTransaction().begin();
+                    //em.persist(student.getAssignment());
+                    //em.getTransaction().commit();
+                    //assignment = student.getAssignment();
+                    return null;
                 }else {
                     assignment = em.find(Assignment.class, student.getAssignment().getId());
                     if(assignment == null) {
-                        em.getTransaction().begin();
-                        em.persist(student.getAssignment());
-                        em.getTransaction().commit();
-                        assignment = student.getAssignment();
-                        //return null
+                        //em.getTransaction().begin();
+                        //em.persist(student.getAssignment());
+                        //em.getTransaction().commit();
+                        //assignment = student.getAssignment();
+                        return null;
                     }
                 }
             }
