@@ -1,6 +1,5 @@
 package sk.stuba.fei.uim.vsa.pr1.entities;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import sk.stuba.fei.uim.vsa.pr1.enums.Status;
@@ -8,7 +7,6 @@ import sk.stuba.fei.uim.vsa.pr1.enums.Typ;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.UUID;
 
 @Entity
@@ -44,7 +42,7 @@ public class Assignment {
         this.nazov = title;
         this.popis = description;
         this.typ = Typ.valueOf(type);
-        this.status = Status.Free;
+        this.status = Status.VOLNA;
         this.datumZverejnenia = LocalDate.now();
         this.odovzdaniePrace = LocalDate.now().plusMonths(3);
         this.registracneCislo = generateRegCislo(teacher.getMeno());

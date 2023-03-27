@@ -108,7 +108,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }else if(assignmentTypedQuery.getResultList().size() == 1) {
                 Assignment assignment = assignmentTypedQuery.getSingleResult();
                 assignment.setStudent(null);
-                assignment.setStatus(Status.Free);
+                assignment.setStatus(Status.VOLNA);
             }
             Assignment assignment = new Assignment();
             if(student.getAssignment() != null) {
@@ -142,7 +142,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                         return null;
                     }
                     assignment.setStudent(student1);
-                    assignment.setStatus(Status.Taken);
+                    assignment.setStatus(Status.ZABRANA);
                 }
             }
             em.getTransaction().commit();
@@ -434,7 +434,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 }
             }
             boolean compareDates = assignment.getOdovzdaniePrace().isBefore(LocalDate.now());
-            if(assignment.getStatus().equals(Status.Submitted) || assignment.getStatus().equals(Status.Taken)
+            if(assignment.getStatus().equals(Status.ODOVZDANA) || assignment.getStatus().equals(Status.ZABRANA)
             || compareDates) {
                 throw new IllegalStateException("Assignment cannot be taken");
             }
@@ -446,7 +446,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             assignment.setStudent(student);
             // SET STATUS
             em.merge(assignment);
-            assignment.setStatus(Status.Taken);
+            assignment.setStatus(Status.ZABRANA);
             em.getTransaction().commit();
             return assignment;
         }catch (Exception e) {
@@ -477,12 +477,12 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }
             Student student = assignment.getStudent();
             boolean compareDates = LocalDate.now().isAfter(assignment.getOdovzdaniePrace());
-            if(assignment.getStatus().equals(Status.Submitted) || compareDates || student.getAisId() == null
-            || assignment.getStatus().equals(Status.Free)) {
+            if(assignment.getStatus().equals(Status.ODOVZDANA) || compareDates || student.getAisId() == null
+            || assignment.getStatus().equals(Status.VOLNA)) {
                 throw new IllegalStateException("Assignment cannot be submitted");
             }
             em.getTransaction().begin();
-            assignment.setStatus(Status.Submitted);
+            assignment.setStatus(Status.ODOVZDANA);
             em.getTransaction().commit();
             return assignment;
         }catch (Exception e){
