@@ -82,85 +82,46 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
 
     @Override
     public Student updateStudent(Student student) {
-        if(student == null){
-            throw new IllegalArgumentException("Student not found");
+        if (student == null) {
+            throw new IllegalArgumentException("Student cannot be null");
         }
-        if(student.getAisId() == null) {
-            throw new IllegalArgumentException("Student not found");
+
+        if (student.getAisId() == null) {
+            throw new IllegalArgumentException("Student AisId cannot be null");
         }
         EntityManager em = emf.createEntityManager();
+
+        // Retrieve the existing student instance from the database
         Student student1 = em.find(Student.class, student.getAisId());
-        if(student1 == null) {
+        if (student1 == null) {
             return null;
         }
         try {
-            if(student.getEmail() != null && !student.getEmail().equals(student1.getEmail())) {
-                TypedQuery<Student> studentTypedQuery = em.createQuery("select s from Student s where s.email= :email", Student.class);
-                studentTypedQuery.setParameter("email", student.getEmail());
-                if(studentTypedQuery.getResultList().size() > 0) {
+            em.getTransaction().begin();
+
+            if(!Objects.equals(student1.getEmail(), student.getEmail())) {
+                TypedQuery<Student> query = em.createQuery("SELECT s FROM Student s WHERE s.email = :email", Student.class);
+                query.setParameter("email", student.getEmail());
+                List<Student> students = query.getResultList();
+                if (!students.isEmpty()) {
                     return null;
-                }
-            }
-            TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("select a from Assignment a where a.student.aisId = :aisId", Assignment.class);
-            assignmentTypedQuery.setParameter("aisId", student.getAisId());
-            if(assignmentTypedQuery.getResultList().size() > 1){
-                return null;
-            }else if(assignmentTypedQuery.getResultList().size() == 1) {
-                Assignment assignment = assignmentTypedQuery.getSingleResult();
-                assignment.setStudent(null);
-                assignment.setStatus(Status.VOLNA);
-            }
-            Assignment assignment = new Assignment();
-            if(student.getAssignment() != null) {
-                if(student.getAssignment().getId() == null) {
-                    //em.getTransaction().begin();
-                    //em.persist(student.getAssignment());
-                    //em.getTransaction().commit();
-                    //assignment = student.getAssignment();
-                    return null;
-                }else {
-                    assignment = em.find(Assignment.class, student.getAssignment().getId());
-                    if(assignment == null) {
-                        //em.getTransaction().begin();
-                        //em.persist(student.getAssignment());
-                        //em.getTransaction().commit();
-                        //assignment = student.getAssignment();
-                        return null;
-                    }
                 }
             }
 
-            em.getTransaction().begin();
-            if(student.getAssignment() == null) {
-                if(assignment.getStudent() != null){
-                    assignment.getStudent().setAssignment(null);
-                }
-            }
-            student1.setProgramStudia(student.getProgramStudia());
-            student1.setRocnikStudia(student.getRocnikStudia());
-            student1.setSemesterStudia(student.getSemesterStudia());
-            student1.setAssignment(student.getAssignment());
-            student1.setEmail(student.getEmail());
-            student1.setMeno(student.getMeno());
-            if(assignment != null) {
-                if(assignment.getId() != null) {
-                    // Check assignment deadline and vytvorenie prace
-                    if(assignment.getOdovzdaniePrace().isBefore(assignment.getDatumZverejnenia())) {
-                        return null;
-                    }
-                    assignment.setStudent(student1);
-                    assignment.setStatus(Status.ZABRANA);
-                }
-            }
+
             em.getTransaction().commit();
+
             return student1;
-        }catch (Exception e){
+        } catch (Exception e) {
+            // If an exception occurs during the transaction, rollback and return null
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
             return null;
-        }finally {
-            em.close();
+        } finally {
+            if(em != null) {
+                em.close();
+            }
         }
     }
 
