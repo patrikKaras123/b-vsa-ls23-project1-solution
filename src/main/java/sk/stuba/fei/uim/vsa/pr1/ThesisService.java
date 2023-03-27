@@ -83,11 +83,11 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     @Override
     public Student updateStudent(Student student) {
         if (student == null) {
-            throw new IllegalArgumentException("Student cannot be null");
+            throw new IllegalArgumentException("cannot be null");
         }
 
         if (student.getAisId() == null) {
-            throw new IllegalArgumentException("Student AisId cannot be null");
+            throw new IllegalArgumentException("AisId cannot be null");
         }
         EntityManager em = emf.createEntityManager();
 
@@ -108,7 +108,28 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 }
             }
 
-
+            if(student.getAssignment() != null) {
+                Assignment assignment = em.find(Assignment.class, student.getAssignment().getId());
+                if (assignment != null) {
+                    if (assignment.getStudent() != null) {
+                        return null;
+                    }
+                    assignment.setStudent(student1);
+                    assignment.setStatus(Status.ZABRANA);
+                }
+            }
+            if(student.getAssignment() != null && student.getAssignment().getOdovzdaniePrace() != null && student.getAssignment().getDatumZverejnenia() != null) {
+                if (student.getAssignment().getOdovzdaniePrace().isBefore(student.getAssignment().getDatumZverejnenia())) {
+                    return null;
+                }
+            }
+            // Update the student instance
+            student1.setSemesterStudia(student.getSemesterStudia());
+            student1.setRocnikStudia(student.getRocnikStudia());
+            student1.setMeno(student.getMeno());
+            student1.setAssignment(student.getAssignment());
+            student1.setEmail(student.getEmail());
+            student1.setProgramStudia(student.getProgramStudia());
             em.getTransaction().commit();
 
             return student1;
