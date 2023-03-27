@@ -33,6 +33,7 @@ public class Teacher implements Serializable {
         this.meno = name;
         this.email = email;
         this.oddelenie = department;
+        this.institut = department;
         this.assignmentList = new ArrayList<>();
     }
 
