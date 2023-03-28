@@ -621,10 +621,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 return null;
             }
 
-            existingThesis.setStudent(thesis.getStudent());
             existingThesis.setStatus(thesis.getStatus());
             existingThesis.setTyp(thesis.getTyp());
-            existingThesis.setTeacher(thesis.getTeacher());
             // check if registration number is unique, but if it is the same as the existing one for current thesis ID, it is ok
             if (thesis.getRegistracneCislo() != null) {
                 TypedQuery<Assignment> query = em.createQuery("SELECT a FROM Assignment a WHERE a.registracneCislo = :regCislo", Assignment.class);
@@ -634,21 +632,30 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     return null;
                 }
             }
-            existingThesis.setRegistracneCislo(thesis.getRegistracneCislo());
-            if(thesis.getStudent() != null) {
-                existingThesis.getStudent().setAssignment(existingThesis);
-            }
+
+            List<Assignment> teacherAssignments = thesis.getTeacher().getAssignmentList();
+            teacherAssignments.add(thesis);
+
             // REMOVE OLD STUDENT
             if(existingThesis.getStudent() != null) {
                 existingThesis.getStudent().setAssignment(null);
+                existingThesis.setStudent(null);
             }
-            if(thesis.getTeacher() != null) {
-                existingThesis.getTeacher().getAssignmentList().add(existingThesis);
+            // ADD NEW STUDENT and set assignment to new student
+            if(thesis.getStudent() != null) {
+                existingThesis.setStudent(thesis.getStudent());
+                existingThesis.getStudent().setAssignment(existingThesis);
             }
-            // REMOVE OLD TEACHER
-            if(existingThesis.getTeacher() != null) {
+            if(!Objects.equals(existingThesis.getTeacher().getAisId(), thesis.getTeacher().getAisId())) {
                 existingThesis.getTeacher().getAssignmentList().remove(existingThesis);
             }
+            existingThesis.setRegistracneCislo(thesis.getRegistracneCislo());
+            if(thesis.getStudent() != null) {
+                thesis.getStudent().setAssignment(existingThesis);
+            }
+            existingThesis.setTeacher(thesis.getTeacher());
+            thesis.getTeacher().setAssignmentList(teacherAssignments);
+            em.merge(thesis.getTeacher());
             existingThesis.setPracovisko(thesis.getPracovisko());
             existingThesis.setOdovzdaniePrace(thesis.getOdovzdaniePrace());
             existingThesis.setNazov(thesis.getNazov());

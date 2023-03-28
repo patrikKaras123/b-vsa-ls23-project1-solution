@@ -59,6 +59,20 @@ public class Assignment {
         this.registracneCislo = generateRegCislo("test");
     }
 
+    public Assignment(Assignment a) {
+        this.teacher = a.getTeacher();
+        this.nazov = a.getNazov();
+        this.popis = a.getPopis();
+        this.typ = a.getTyp();
+        this.status = a.getStatus();
+        this.student = a.getStudent();
+        this.id = a.getId();
+        this.datumZverejnenia = LocalDate.now();
+        this.odovzdaniePrace = LocalDate.now().plusMonths(3);
+        this.registracneCislo = a.getRegistracneCislo();
+        this.pracovisko = a.getPracovisko();
+    }
+
     private String generateRegCislo(String meno) {
         return "FEI-" + meno + "-" + UUID.randomUUID();
     }
