@@ -163,6 +163,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             return studentTypedQuery.getResultList();
         }
         catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
             return new ArrayList<>();
         }finally {
             em.close();
@@ -336,6 +339,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             TypedQuery<Teacher> pedagogicTypedQuery = em.createQuery("SELECT p from Teacher p", Teacher.class);
             return pedagogicTypedQuery.getResultList();
         }catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
             return new ArrayList<>();
         }finally {
             if(em != null) {
@@ -437,12 +443,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 throw new IllegalStateException("Assignment cannot be taken");
             }
             em.getTransaction().begin();
-            // SET STUDENT
-            // ASSIGN STUDENT TO THESIS
             student.setAssignment(assignment);
             em.merge(student);
             assignment.setStudent(student);
-            // SET STATUS
             em.merge(assignment);
             assignment.setStatus(Status.ZABRANA);
             em.getTransaction().commit();
@@ -529,6 +532,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("SELECT a from Assignment a", Assignment.class);
             return assignmentTypedQuery.getResultList();
         } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
             return new ArrayList<>();
         } finally {
             if(em != null) {
