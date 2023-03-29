@@ -1,5 +1,9 @@
 package sk.stuba.fei.uim.vsa.pr1;
 
+import sk.stuba.fei.uim.vsa.pr1.bonus.MyPage;
+import sk.stuba.fei.uim.vsa.pr1.bonus.Page;
+import sk.stuba.fei.uim.vsa.pr1.bonus.Pageable;
+import sk.stuba.fei.uim.vsa.pr1.bonus.PageableThesisService;
 import sk.stuba.fei.uim.vsa.pr1.entities.Assignment;
 import sk.stuba.fei.uim.vsa.pr1.entities.Student;
 import sk.stuba.fei.uim.vsa.pr1.entities.Teacher;
@@ -9,12 +13,10 @@ import sk.stuba.fei.uim.vsa.pr1.enums.Typ;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.sql.Date;
 
-public class ThesisService extends AbstractThesisService<Student, Teacher, Assignment> {
+public class ThesisService extends AbstractThesisService<Student, Teacher, Assignment> implements PageableThesisService<Student, Teacher, Assignment> {
 
     public ThesisService() {
         super();
@@ -698,4 +700,152 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             em.close();
         }
     }
+
+    @Override
+    public Page<Assignment> findTheses(Optional<String> department, Optional<java.util.Date> publishedOn, Optional<String> type, Optional<String> status, Pageable pageable) {
+        List<Assignment> assignmentList = this.getTheses();
+
+        if (department.isPresent()) {
+            List<Assignment> filtered = new ArrayList<>();
+            for (Assignment a : assignmentList) {
+                if (a.getPracovisko().equals(department.get())) {
+                    filtered.add(a);
+                }
+            }
+            assignmentList = filtered;
+        }
+
+        if (publishedOn.isPresent()) {
+            LocalDate date = new Date(publishedOn.get().getTime()).toLocalDate();
+            List<Assignment> filtered = new ArrayList<>();
+            for (Assignment a : assignmentList) {
+                if (a.getDatumZverejnenia().equals(date)) {
+                    filtered.add(a);
+                }
+            }
+            assignmentList = filtered;
+        }
+
+        if (type.isPresent()) {
+            List<Assignment> filtered = new ArrayList<>();
+            for (Assignment a : assignmentList) {
+                if (a.getTyp().name().equals(type.get())) {
+                    filtered.add(a);
+                }
+            }
+            assignmentList = filtered;
+        }
+
+        if (status.isPresent()) {
+            List<Assignment> filtered = new ArrayList<>();
+            for (Assignment a : assignmentList) {
+                if (a.getStatus().name().equals(status.get())) {
+                    filtered.add(a);
+                }
+            }
+            assignmentList = filtered;
+        }
+
+        if (assignmentList.size() == 0) {
+            return new MyPage<>(new ArrayList<>(), pageable, assignmentList.size());
+        }
+
+        int startIndex = pageable.getPageNumber() * pageable.getPageSize();
+        int endIndex = Math.min(startIndex + pageable.getPageSize(), assignmentList.size());
+
+        if (startIndex > endIndex) {
+            return new MyPage<>(new ArrayList<>(), pageable, assignmentList.size());
+        }
+
+        List<Assignment> pageContent = assignmentList.subList(startIndex, endIndex);
+        Page<Assignment> page = new MyPage<>(pageContent, pageable, assignmentList.size());
+
+        return page;
+    }
+
+
+    @Override
+    public Page<Teacher> findTeachers(Optional<String> name, Optional<String> institute, Pageable pageable) {
+        List<Teacher> teacherList = this.getTeachers();
+
+        if (name.isPresent()) {
+            List<Teacher> filteredByName = new ArrayList<>();
+            for (Teacher teacher : teacherList) {
+                if (teacher.getMeno().equals(name.get())) {
+                    filteredByName.add(teacher);
+                }
+            }
+            teacherList = filteredByName;
+        }
+
+        if (institute.isPresent()) {
+            List<Teacher> filteredByInstitute = new ArrayList<>();
+            for (Teacher teacher : teacherList) {
+                if (teacher.getInstitut().equals(institute.get())) {
+                    filteredByInstitute.add(teacher);
+                }
+            }
+            teacherList = filteredByInstitute;
+        }
+
+        if (teacherList.size() == 0) {
+            return new MyPage<>(new ArrayList<>(), pageable, teacherList.size());
+        }
+
+        int startIndex = pageable.getPageNumber() * pageable.getPageSize();
+        int endIndex = Math.min(startIndex + pageable.getPageSize(), teacherList.size());
+
+        if (startIndex > endIndex) {
+            return new MyPage<>(new ArrayList<>(), pageable, teacherList.size());
+        }
+
+        List<Teacher> pageContent = teacherList.subList(startIndex, endIndex);
+
+        return new MyPage<>(pageContent, pageable, teacherList.size());
+    }
+
+
+    @Override
+    public Page<Student> findStudents(Optional<String> name, Optional<String> year, Pageable pageable) {
+        List<Student> studentList = this.getStudents();
+
+        if (name.isPresent()) {
+            List<Student> filteredByName = new ArrayList<>();
+            for (Student s : studentList) {
+                if (s.getMeno().equals(name.get())) {
+                    filteredByName.add(s);
+                }
+            }
+            studentList = filteredByName;
+        }
+
+        if (year.isPresent()) {
+            Integer yr = Integer.parseInt(year.get());
+            List<Student> filteredByYear = new ArrayList<>();
+            for (Student s : studentList) {
+                if (s.getRocnikStudia().equals(yr)) {
+                    filteredByYear.add(s);
+                }
+            }
+            studentList = filteredByYear;
+        }
+
+        if (studentList.size() == 0) {
+            return new MyPage<>(new ArrayList<>(), pageable, studentList.size());
+        }
+
+        int startIndex = pageable.getPageNumber() * pageable.getPageSize();
+        int endIndex = Math.min(startIndex + pageable.getPageSize(), studentList.size());
+
+        if (startIndex > endIndex) {
+            return new MyPage<>(new ArrayList<>(), pageable, studentList.size());
+        }
+
+        List<Student> pageContent = studentList.subList(startIndex, endIndex);
+
+        Page<Student> page = new MyPage<>(pageContent, pageable, studentList.size());
+
+        return page;
+    }
+
 }
