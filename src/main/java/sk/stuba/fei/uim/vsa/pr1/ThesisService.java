@@ -633,18 +633,38 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 }
             }
 
+            // write query to find student by ais id in assignment table
+            TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("select a from Assignment a where a.student.aisId = :aisId", Assignment.class).setParameter("aisId", thesis.getStudent().getAisId());
+            Assignment assignment = new Assignment();
+            if(assignmentTypedQuery.getResultList().size() > 0){
+                assignment = assignmentTypedQuery.getSingleResult();
+            }
+
+            if(assignment != null && assignment.getStudent() != null) {
+                assignment.setStudent(null);
+                assignment.setStatus(Status.VOLNA);
+            }
+
+
+            // Check if student does have another thesis assigned
+            /*if(thesis.getStudent() != null) {
+                TypedQuery<Assignment> query = em.createQuery("SELECT a FROM Assignment a WHERE a.student = :student", Assignment.class);
+                query.setParameter("student", thesis.getStudent());
+                List<Assignment> resultList = query.getResultList();
+                if (resultList.size() > 0 && !resultList.get(0).getId().equals(thesis.getId())) {
+                    return null;
+                }
+            }*/
+
             List<Assignment> teacherAssignments = thesis.getTeacher().getAssignmentList();
             teacherAssignments.add(thesis);
-
-            // REMOVE OLD STUDENT
             if(existingThesis.getStudent() != null) {
                 existingThesis.getStudent().setAssignment(null);
                 existingThesis.setStudent(null);
+                existingThesis.setStatus(Status.VOLNA);
             }
-            // ADD NEW STUDENT and set assignment to new student
             if(thesis.getStudent() != null) {
-                existingThesis.setStudent(thesis.getStudent());
-                existingThesis.getStudent().setAssignment(existingThesis);
+                thesis.getStudent().setAssignment(existingThesis);
             }
             if(!Objects.equals(existingThesis.getTeacher().getAisId(), thesis.getTeacher().getAisId())) {
                 existingThesis.getTeacher().getAssignmentList().remove(existingThesis);
@@ -653,7 +673,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             if(thesis.getStudent() != null) {
                 thesis.getStudent().setAssignment(existingThesis);
             }
+
             existingThesis.setTeacher(thesis.getTeacher());
+            existingThesis.setStatus(Status.ZABRANA);
             thesis.getTeacher().setAssignmentList(teacherAssignments);
             em.merge(thesis.getTeacher());
             existingThesis.setPracovisko(thesis.getPracovisko());
@@ -661,8 +683,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             existingThesis.setNazov(thesis.getNazov());
             existingThesis.setPopis(thesis.getPopis());
             existingThesis.setDatumZverejnenia(thesis.getDatumZverejnenia());
+            existingThesis.setStudent(thesis.getStudent());
             em.getTransaction().commit();
-
             return existingThesis;
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
