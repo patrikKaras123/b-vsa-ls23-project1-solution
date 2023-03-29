@@ -108,7 +108,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 }
             }
 
-            if(student.getAssignment() != null) {
+            /*if(student.getAssignment() != null) {
                 Assignment assignment = em.find(Assignment.class, student.getAssignment().getId());
                 if (assignment != null) {
                     if (assignment.getStudent() != null) {
@@ -117,7 +117,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     assignment.setStudent(student1);
                     assignment.setStatus(Status.ZABRANA);
                 }
-            }
+            }*/
             if(student.getAssignment() != null && student.getAssignment().getOdovzdaniePrace() != null && student.getAssignment().getDatumZverejnenia() != null) {
                 if (student.getAssignment().getOdovzdaniePrace().isBefore(student.getAssignment().getDatumZverejnenia())) {
                     return null;
@@ -125,7 +125,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }
 
             //If the student has null assignment, then the set assignment is null for student and in assigment is set student to null
-            if(student.getAssignment() == null) {
+            /*if(student.getAssignment() == null) {
                 if(student1.getAssignment() != null) {
                     student1.getAssignment().setStudent(null);
                     student1.getAssignment().setStatus(Status.VOLNA);
@@ -138,7 +138,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             student1.setAssignment(student.getAssignment());
             student1.setEmail(student.getEmail());
             student1.setProgramStudia(student.getProgramStudia());
-            em.getTransaction().commit();
+            em.getTransaction().commit();*/
+            student1 = em.merge(student);
 
             return student1;
         } catch (Exception e) {
@@ -292,9 +293,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                     return null;
                 }
             }
-            teacher1.setInstitut(teacher.getInstitut());
+            //teacher1.setInstitut(teacher.getInstitut());
             Teacher updatedTeacher = em.merge(teacher);
-            List<Assignment> existingThesisList = teacher1.getAssignmentList();
+            /*List<Assignment> existingThesisList = teacher1.getAssignmentList();
             List<Assignment> updatedThesisList = updatedTeacher.getAssignmentList();
 
             if (updatedThesisList != null) {
@@ -312,7 +313,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 for (Assignment addedThesis : addedThesisList) {
                     makeThesisAssignment(updatedTeacher.getAisId(), addedThesis.getNazov(), addedThesis.getTyp().name(), addedThesis.getPopis());
                 }
-            }
+            }*/
 
             em.getTransaction().commit();
             return updatedTeacher;
@@ -540,11 +541,11 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     public List<Assignment> getThesesByTeacher(Long teacherId) {
         EntityManager em = emf.createEntityManager();
         try {
-            Teacher teacher = em.find(Teacher.class, teacherId);
+            TypedQuery<Assignment> teacher = em.createQuery("select s from Assignment s where s.teacher.aisId = :aisId", Assignment.class).setParameter("aisId", teacherId);
             if(teacher == null){
                 return new ArrayList<>();
             }
-            return teacher.getAssignmentList();
+            return teacher.getResultList();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
@@ -561,16 +562,15 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
     public Assignment getThesisByStudent(Long studentId) {
         EntityManager em = emf.createEntityManager();
         try{
-
-            // FIND STUDENT BY ID write query to find student by id
-            TypedQuery<Student> student2 = em.createQuery("select s from Student s where s.aisId = :aisId", Student.class).setParameter("aisId", studentId);
+            TypedQuery<Assignment> student2 = em.createQuery("select s from Assignment s where s.student.aisId = :aisId", Assignment.class).setParameter("aisId", studentId);
             if(student2.getResultList().size() == 0){
                 return null;
             }
+            if(student2.getResultList().size() > 1){
+                return null;
+            }
 
-            Student student = student2.getSingleResult();
-
-            return student.getAssignment();
+            return student2.getSingleResult();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
@@ -620,9 +620,13 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             if (existingThesis == null) {
                 return null;
             }
+            // check if thesis is free if not return null and its not assigned to the same student
+            if(existingThesis.getStudent() != null && thesis.getStudent() != null) {
+                if(!thesis.getStudent().getAisId().equals(existingThesis.getStudent().getAisId()) && existingThesis.getStatus() != Status.VOLNA) {
+                    return null;
+                }
+            }
 
-            existingThesis.setStatus(thesis.getStatus());
-            existingThesis.setTyp(thesis.getTyp());
             // check if registration number is unique, but if it is the same as the existing one for current thesis ID, it is ok
             if (thesis.getRegistracneCislo() != null) {
                 TypedQuery<Assignment> query = em.createQuery("SELECT a FROM Assignment a WHERE a.registracneCislo = :regCislo", Assignment.class);
@@ -634,10 +638,12 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }
 
             // write query to find student by ais id in assignment table
-            TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("select a from Assignment a where a.student.aisId = :aisId", Assignment.class).setParameter("aisId", thesis.getStudent().getAisId());
             Assignment assignment = new Assignment();
-            if(assignmentTypedQuery.getResultList().size() > 0){
-                assignment = assignmentTypedQuery.getSingleResult();
+            if(thesis.getStudent() != null) {
+                TypedQuery<Assignment> assignmentTypedQuery = em.createQuery("select a from Assignment a where a.student.aisId = :aisId", Assignment.class).setParameter("aisId", thesis.getStudent().getAisId());
+                if(assignmentTypedQuery.getResultList().size() > 0){
+                    assignment = assignmentTypedQuery.getSingleResult();
+                }
             }
 
             if(assignment != null && assignment.getStudent() != null) {
@@ -645,45 +651,36 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 assignment.setStatus(Status.VOLNA);
             }
 
-
-            // Check if student does have another thesis assigned
-            /*if(thesis.getStudent() != null) {
-                TypedQuery<Assignment> query = em.createQuery("SELECT a FROM Assignment a WHERE a.student = :student", Assignment.class);
-                query.setParameter("student", thesis.getStudent());
-                List<Assignment> resultList = query.getResultList();
-                if (resultList.size() > 0 && !resultList.get(0).getId().equals(thesis.getId())) {
-                    return null;
-                }
-            }*/
-
             List<Assignment> teacherAssignments = thesis.getTeacher().getAssignmentList();
             teacherAssignments.add(thesis);
-            if(existingThesis.getStudent() != null) {
+            /*if(existingThesis.getStudent() != null) {
                 existingThesis.getStudent().setAssignment(null);
                 existingThesis.setStudent(null);
                 existingThesis.setStatus(Status.VOLNA);
-            }
+            }*/
             if(thesis.getStudent() != null) {
                 thesis.getStudent().setAssignment(existingThesis);
             }
             if(!Objects.equals(existingThesis.getTeacher().getAisId(), thesis.getTeacher().getAisId())) {
                 existingThesis.getTeacher().getAssignmentList().remove(existingThesis);
             }
-            existingThesis.setRegistracneCislo(thesis.getRegistracneCislo());
-            if(thesis.getStudent() != null) {
-                thesis.getStudent().setAssignment(existingThesis);
-            }
-
-            existingThesis.setTeacher(thesis.getTeacher());
-            existingThesis.setStatus(Status.ZABRANA);
+            //existingThesis.setRegistracneCislo(thesis.getRegistracneCislo());
+            //existingThesis.setTeacher(thesis.getTeacher());
             thesis.getTeacher().setAssignmentList(teacherAssignments);
             em.merge(thesis.getTeacher());
-            existingThesis.setPracovisko(thesis.getPracovisko());
+            /*existingThesis.setPracovisko(thesis.getPracovisko());
             existingThesis.setOdovzdaniePrace(thesis.getOdovzdaniePrace());
             existingThesis.setNazov(thesis.getNazov());
             existingThesis.setPopis(thesis.getPopis());
-            existingThesis.setDatumZverejnenia(thesis.getDatumZverejnenia());
+            existingThesis.setDatumZverejnenia(thesis.getDatumZverejnenia());*/
+            existingThesis = em.merge(thesis);
             existingThesis.setStudent(thesis.getStudent());
+            if(thesis.getStudent() != null) {
+                existingThesis.setStatus(Status.ZABRANA);
+            }
+            if(thesis.getStudent() != null) {
+                thesis.getStudent().setAssignment(existingThesis);
+            }
             em.getTransaction().commit();
             return existingThesis;
         } catch (Exception e) {
