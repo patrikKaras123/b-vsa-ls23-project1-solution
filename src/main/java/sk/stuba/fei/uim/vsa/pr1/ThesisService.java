@@ -110,16 +110,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
                 }
             }
 
-            /*if(student.getAssignment() != null) {
-                Assignment assignment = em.find(Assignment.class, student.getAssignment().getId());
-                if (assignment != null) {
-                    if (assignment.getStudent() != null) {
-                        return null;
-                    }
-                    assignment.setStudent(student1);
-                    assignment.setStatus(Status.ZABRANA);
-                }
-            }*/
+
             if(student.getAssignment() != null && student.getAssignment().getOdovzdaniePrace() != null && student.getAssignment().getDatumZverejnenia() != null) {
                 if (student.getAssignment().getOdovzdaniePrace().isBefore(student.getAssignment().getDatumZverejnenia())) {
                     return null;
@@ -142,7 +133,17 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             student1.setProgramStudia(student.getProgramStudia());
             em.getTransaction().commit();*/
             student1 = em.merge(student);
-
+            if(student.getAssignment() != null) {
+                Assignment assignment = em.find(Assignment.class, student.getAssignment().getId());
+                if (assignment != null) {
+                    if (assignment.getStudent() != null) {
+                        return null;
+                    }
+                    assignment.setStudent(student1);
+                    em.merge(assignment);
+                }
+            }
+            em.getTransaction().commit();
             return student1;
         } catch (Exception e) {
             // If an exception occurs during the transaction, rollback and return null
