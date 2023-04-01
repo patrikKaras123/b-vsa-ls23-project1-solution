@@ -656,6 +656,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             }
 
             if(assignment != null && assignment.getStudent() != null) {
+                if(!Objects.equals(assignment.getStudent().getAisId(), thesis.getStudent().getAisId()) && assignment.getStatus() != Status.VOLNA) {
+                    return null;
+                }
                 assignment.setStudent(null);
                 assignment.setStatus(Status.VOLNA);
             }
