@@ -1,0 +1,4 @@
+warning: in the working copy of 'feedback/testRun-2023-04-09T00-39-40.966/maven-outputs/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'feedback/testRun-2023-04-09T00-39-40.966/surefire-test-reports/surefire-report.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'feedback/testRun-2023-04-09T00-39-59.848/maven-outputs/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'feedback/testRun-2023-04-09T00-39-59.848/surefire-test-reports/surefire-report.txt', LF will be replaced by CRLF the next time Git touches it
