@@ -8,27 +8,27 @@
   </student>
   <testRuns>
     <testRun>
-      <id>testRun-2023-04-10T23-23-24.377</id>
+      <id>testRun-2023-04-10T23-24-10.766</id>
       <totalRun>26</totalRun>
       <success>26</success>
       <failure>0</failure>
       <error>0</error>
       <points>15</points>
       <bonus>false</bonus>
-      <duration>PT30.723S</duration>
+      <duration>PT30.747S</duration>
     </testRun>
     <testRun>
-      <id>testRun-2023-04-10T23-23-55.105</id>
+      <id>testRun-2023-04-10T23-24-41.518</id>
       <totalRun>3</totalRun>
       <success>3</success>
       <failure>0</failure>
       <error>0</error>
       <points>3</points>
       <bonus>true</bonus>
-      <duration>PT9.242S</duration>
+      <duration>PT9.567S</duration>
     </testRun>
   </testRuns>
   <totalPoints>15</totalPoints>
   <notes/>
-  <testDuration>PT39.965S</testDuration>
+  <testDuration>PT40.314S</testDuration>
 </evaluation>
