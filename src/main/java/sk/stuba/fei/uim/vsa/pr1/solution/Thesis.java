@@ -35,7 +35,7 @@ public class Thesis implements Serializable {
     private String description;
     private String department;
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(fetch = FetchType.EAGER)
     private Teacher supervisor;
 
