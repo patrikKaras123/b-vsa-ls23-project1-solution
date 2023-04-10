@@ -1,0 +1,232 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------< sk.stuba.fei.uim.vsa:b-vsa-ls23-project1-solution >----------
+[INFO] Building b-vsa-ls23-project1-solution 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ b-vsa-ls23-project1-solution ---
+[INFO] Deleting /tested--b-vsa-ls23-projekt-1/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1-solution ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /tested--b-vsa-ls23-projekt-1/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1-solution ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ b-vsa-ls23-project1-solution ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tested--b-vsa-ls23-projekt-1/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ b-vsa-ls23-project1-solution ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /tested--b-vsa-ls23-projekt-1/target/test-classes
+[WARNING] /tested--b-vsa-ls23-projekt-1/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Some input files use unchecked or unsafe operations.
+[WARNING] /tested--b-vsa-ls23-projekt-1/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ b-vsa-ls23-project1-solution ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.bonus.PageableTest
+2023-04-10 23:37:34.977  INFO --- [           main] org.reflections.Reflections              : Reflections took 58 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: server: 2023-04-10 23:37:35.133--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-04-10 23:37:35.258--ServerSession(1179792105)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-04-10 23:37:35.271--ServerSession(1179792105)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field supervisedTheses] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-04-10 23:37:35.275--ServerSession(1179792105)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is set to [FIELD].
+[EL Config]: metadata: 2023-04-10 23:37:35.276--ServerSession(1179792105)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field author] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Student.
+[EL Config]: metadata: 2023-04-10 23:37:35.279--ServerSession(1179792105)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field supervisor] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Teacher.
+[EL Config]: metadata: 2023-04-10 23:37:35.279--ServerSession(1179792105)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-04-10 23:37:35.28--ServerSession(1179792105)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field thesis] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.solution.Thesis.
+[EL Config]: metadata: 2023-04-10 23:37:35.28--ServerSession(1179792105)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-04-10 23:37:35.29--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-04-10 23:37:35.29--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [institute] is being defaulted to: INSTITUTE.
+[EL Config]: metadata: 2023-04-10 23:37:35.29--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-04-10 23:37:35.29--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-10 23:37:35.291--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-04-10 23:37:35.291--ServerSession(1179792105)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Thesis] is being defaulted to: Thesis.
+[EL Config]: metadata: 2023-04-10 23:37:35.291--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [registrationNumber] is being defaulted to: REGISTRATIONNUMBER.
+[EL Config]: metadata: 2023-04-10 23:37:35.292--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2023-04-10 23:37:35.292--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [publishedOn] is being defaulted to: PUBLISHEDON.
+[EL Config]: metadata: 2023-04-10 23:37:35.293--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-04-10 23:37:35.293--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: metadata: 2023-04-10 23:37:35.294--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [type] is being defaulted to: TYPE.
+[EL Config]: metadata: 2023-04-10 23:37:35.295--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [department] is being defaulted to: DEPARTMENT.
+[EL Config]: metadata: 2023-04-10 23:37:35.295--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [deadline] is being defaulted to: DEADLINE.
+[EL Config]: metadata: 2023-04-10 23:37:35.295--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-04-10 23:37:35.296--ServerSession(1179792105)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-04-10 23:37:35.296--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [studyProgramme] is being defaulted to: STUDYPROGRAMME.
+[EL Config]: metadata: 2023-04-10 23:37:35.296--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [year] is being defaulted to: YEAR.
+[EL Config]: metadata: 2023-04-10 23:37:35.296--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2023-04-10 23:37:35.296--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [term] is being defaulted to: TERM.
+[EL Config]: metadata: 2023-04-10 23:37:35.297--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-10 23:37:35.297--ServerSession(1179792105)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-04-10 23:37:35.307--ServerSession(1179792105)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field author] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-10 23:37:35.307--ServerSession(1179792105)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [author] is being defaulted to: AUTHOR_AISID.
+[EL Config]: metadata: 2023-04-10 23:37:35.307--ServerSession(1179792105)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field supervisor] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-10 23:37:35.307--ServerSession(1179792105)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [supervisor] is being defaulted to: SUPERVISOR_AISID.
+[EL Info]: 2023-04-10 23:37:35.458--ServerSession(1179792105)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-04-10 23:37:35.463--ServerSession(1179792105)--Connection(25936709)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1"
+))
+[EL Config]: connection: 2023-04-10 23:37:35.598--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Warning]: metadata: 2023-04-10 23:37:35.607--ServerSession(1179792105)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [thesis] for the entity class [class sk.stuba.fei.uim.vsa.pr1.solution.Student] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-04-10 23:37:35.675--ServerSession(1179792105)--Thread(Thread[main,5,main])--/file:/tested--b-vsa-ls23-projekt-1/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-04-10 23:37:35.69--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_SUPERVISOR_AISID
+[EL Fine]: sql: 2023-04-10 23:37:35.705--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--ALTER TABLE THESIS DROP CONSTRAINT FK_THESIS_AUTHOR_AISID
+[EL Fine]: sql: 2023-04-10 23:37:35.708--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-10 23:37:35.711--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-10 23:37:35.714--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--DROP TABLE THESIS CASCADE
+[EL Fine]: sql: 2023-04-10 23:37:35.728--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-04-10 23:37:35.737--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, NAME VARCHAR(255) NOT NULL, STUDYPROGRAMME VARCHAR(255), TERM INTEGER, YEAR INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-04-10 23:37:35.757--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, DEPARTMENT VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL UNIQUE, INSTITUTE VARCHAR(255), NAME VARCHAR(255) NOT NULL, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-04-10 23:37:35.772--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--CREATE TABLE THESIS (ID BIGINT NOT NULL, DEADLINE DATE, DEPARTMENT VARCHAR(255), DESCRIPTION VARCHAR(255), PUBLISHEDON DATE NOT NULL, REGISTRATIONNUMBER VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TITLE VARCHAR(255) NOT NULL, TYPE VARCHAR(255), SUPERVISOR_AISID BIGINT NOT NULL, AUTHOR_AISID BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-04-10 23:37:35.791--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_SUPERVISOR_AISID FOREIGN KEY (SUPERVISOR_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-04-10 23:37:35.794--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--ALTER TABLE THESIS ADD CONSTRAINT FK_THESIS_AUTHOR_AISID FOREIGN KEY (AUTHOR_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-04-10 23:37:35.798--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-04-10 23:37:35.799--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-04-10 23:37:35.803  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+2023-04-10 23:37:35.813  INFO --- [           main] org.reflections.Reflections              : Reflections took 10 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: moxy: 2023-04-10 23:37:35.816--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@77192705
+2023-04-10 23:37:35.818  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.solution.ThesisService
+2023-04-10 23:37:35.945  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 1
+[EL Fine]: sql: 2023-04-10 23:37:35.97--ClientSession(1627883152)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [1, xstudent1@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:35.990  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 2
+[EL Fine]: sql: 2023-04-10 23:37:35.99--ClientSession(2079961240)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [2, xstudent2@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:35.993  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 3
+[EL Fine]: sql: 2023-04-10 23:37:35.994--ClientSession(532677950)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [3, xstudent3@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:35.997  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 4
+[EL Fine]: sql: 2023-04-10 23:37:35.997--ClientSession(862025017)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [4, xstudent4@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.000  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 5
+[EL Fine]: sql: 2023-04-10 23:37:36.001--ClientSession(417797183)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [5, xstudent5@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.005  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 6
+[EL Fine]: sql: 2023-04-10 23:37:36.005--ClientSession(467632528)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [6, xstudent6@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.008  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 7
+[EL Fine]: sql: 2023-04-10 23:37:36.008--ClientSession(207988207)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [7, xstudent7@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.011  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 8
+[EL Fine]: sql: 2023-04-10 23:37:36.011--ClientSession(799755007)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [8, xstudent8@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.014  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 9
+[EL Fine]: sql: 2023-04-10 23:37:36.014--ClientSession(1556520190)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [9, xstudent9@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.017  INFO --- [           main] s.s.f.uim.vsa.pr1.AbstractThesisService  : Creating student with AIS ID 10
+[EL Fine]: sql: 2023-04-10 23:37:36.017--ClientSession(2039984535)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, NAME, STUDYPROGRAMME, TERM, YEAR) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [10, xstudent10@stuba.sk, Test-Student, null, null, null]
+2023-04-10 23:37:36.028  INFO --- [           main] org.reflections.Reflections              : Reflections took 8 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: sql: 2023-04-10 23:37:36.04--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT AISID AS a1, EMAIL AS a2, NAME AS a3, STUDYPROGRAMME AS a4, TERM AS a5, YEAR AS a6 FROM STUDENT WHERE NAME LIKE ? LIMIT ? OFFSET ?
+	bind => [%Test-Student%, 5, 0]
+[EL Fine]: sql: 2023-04-10 23:37:36.05--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT COUNT(AISID) FROM STUDENT WHERE NAME LIKE ?
+	bind => [%Test-Student%]
+[EL Fine]: sql: 2023-04-10 23:37:36.055--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT AISID AS a1, EMAIL AS a2, NAME AS a3, STUDYPROGRAMME AS a4, TERM AS a5, YEAR AS a6 FROM STUDENT WHERE NAME LIKE ? LIMIT ? OFFSET ?
+	bind => [%Test-Student%, 5, 5]
+[EL Fine]: sql: 2023-04-10 23:37:36.057--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT COUNT(AISID) FROM STUDENT WHERE NAME LIKE ?
+	bind => [%Test-Student%]
+[EL Fine]: sql: 2023-04-10 23:37:36.135--ClientSession(1168079523)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [1, Software engineering, xteacher1@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.139--ClientSession(1151512955)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [2, Software engineering, xteacher2@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.142--ClientSession(2125470482)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [3, Software engineering, xteacher3@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.145--ClientSession(2121317689)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [4, Software engineering, xteacher4@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.148--ClientSession(948960194)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [5, Software engineering, xteacher5@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.151--ClientSession(562561015)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [6, Software engineering, xteacher6@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.153--ClientSession(1306535359)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [7, Software engineering, xteacher7@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.156--ClientSession(288919635)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [8, Software engineering, xteacher8@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.159--ClientSession(1545327692)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [9, Software engineering, xteacher9@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.161--ClientSession(779598031)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [10, Software engineering, xteacher10@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.164--ClientSession(2113243119)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [11, Software engineering, xteacher11@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.167--ClientSession(1457226878)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [12, Software engineering, xteacher12@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.172--ClientSession(1609086753)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [13, Software engineering, xteacher13@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.175--ClientSession(1690481990)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [14, Software engineering, xteacher14@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.177--ClientSession(80499834)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [15, Software engineering, xteacher15@stuba.sk, Software engineering, Test-Teacher]
+2023-04-10 23:37:36.187  INFO --- [           main] org.reflections.Reflections              : Reflections took 8 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: sql: 2023-04-10 23:37:36.19--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT AISID AS a1, DEPARTMENT AS a2, EMAIL AS a3, INSTITUTE AS a4, NAME AS a5 FROM TEACHER WHERE NAME LIKE ? LIMIT ? OFFSET ?
+	bind => [%Test-Teacher%, 7, 7]
+[EL Fine]: sql: 2023-04-10 23:37:36.193--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT COUNT(AISID) FROM TEACHER WHERE NAME LIKE ?
+	bind => [%Test-Teacher%]
+[EL Fine]: sql: 2023-04-10 23:37:36.26--ClientSession(1917562344)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, DEPARTMENT, EMAIL, INSTITUTE, NAME) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, Software engineering, test.teacher@stuba.sk, Software engineering, Test-Teacher]
+[EL Fine]: sql: 2023-04-10 23:37:36.266--ClientSession(1934692470)--Connection(26928827)--Thread(Thread[main,5,main])--UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [50, SEQ_GEN]
+[EL Fine]: sql: 2023-04-10 23:37:36.267--ClientSession(1934692470)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [SEQ_GEN]
+[EL Fine]: sql: 2023-04-10 23:37:36.271--ClientSession(1934692470)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [1, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-62230, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.275--ClientSession(993420850)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [2, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-31114, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.279--ClientSession(1768952842)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-50531, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.282--ClientSession(1298380324)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-4275, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.285--ClientSession(2115640742)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [5, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-36029, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.289--ClientSession(977997405)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [6, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-82235, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.292--ClientSession(1469907228)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [7, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-96774, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.295--ClientSession(2030138610)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-5197, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.298--ClientSession(439232821)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [9, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-79812, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.301--ClientSession(463381475)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [10, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-96439, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.304--ClientSession(1495445111)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [11, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-78399, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.307--ClientSession(1038820134)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [12, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-61442, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.311--ClientSession(667890001)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [13, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-72269, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.314--ClientSession(521342639)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [14, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-78540, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-10 23:37:36.317--ClientSession(537536188)--Connection(26928827)--Thread(Thread[main,5,main])--INSERT INTO THESIS (ID, DEADLINE, DEPARTMENT, DESCRIPTION, PUBLISHEDON, REGISTRATIONNUMBER, STATUS, TITLE, TYPE, SUPERVISOR_AISID, AUTHOR_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [15, 2023-07-10, Software engineering, Some description of the thesis, 2023-04-10, FEI-78056, FREE_TO_TAKE, Excellent Simple Bachelor Thesis, BACHELOR, 80123, null]
+2023-04-10 23:37:36.325  INFO --- [           main] org.reflections.Reflections              : Reflections took 5 ms to scan 2 urls, producing 11 keys and 19 values
+[EL Fine]: sql: 2023-04-10 23:37:36.331--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT ID AS a1, DEADLINE AS a2, DEPARTMENT AS a3, DESCRIPTION AS a4, PUBLISHEDON AS a5, REGISTRATIONNUMBER AS a6, STATUS AS a7, TITLE AS a8, TYPE AS a9, SUPERVISOR_AISID AS a10, AUTHOR_AISID AS a11 FROM THESIS WHERE ((DEPARTMENT = ?) AND (TYPE = ?)) LIMIT ? OFFSET ?
+	bind => [Software engineering, BACHELOR, 7, 7]
+[EL Fine]: sql: 2023-04-10 23:37:36.335--ServerSession(1179792105)--Connection(26928827)--Thread(Thread[main,5,main])--SELECT COUNT(ID) FROM THESIS WHERE ((DEPARTMENT = ?) AND (TYPE = ?))
+	bind => [Software engineering, BACHELOR]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.613 s - in sk.stuba.fei.uim.vsa.pr1.bonus.PageableTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.490 s
+[INFO] Finished at: 2023-04-10T23:37:36Z
+[INFO] ------------------------------------------------------------------------
