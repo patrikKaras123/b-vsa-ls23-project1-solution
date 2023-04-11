@@ -6,7 +6,7 @@
     <class>sk.stuba.fei.uim.vsa.pr1.solution.Thesis</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vsa_pr1"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vsa_pr1_tupllle"/>
       <property name="javax.persistence.jdbc.user" value="vsa"/>
       <property name="javax.persistence.jdbc.password" value="vsa"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
