@@ -47,11 +47,11 @@ public class PageableTest {
         assertNotNull(studentClass);
         db = getDBConnection(DB, USERNAME, PASSWORD);
         assertNotNull(db);
-        thesisIdField = findIdFieldOfEntityClass(Arrays.asList(ID_FIELDS), thesisClass);
+        thesisIdField = findIdFieldOfEntityClass(thesisClass);
         assertNotNull(thesisIdField);
-        teacherIdField = findIdFieldOfEntityClass(Arrays.asList(ID_FIELDS), teacherClass);
+        teacherIdField = findIdFieldOfEntityClass(teacherClass);
         assertNotNull(teacherIdField);
-        studentIdField = findIdFieldOfEntityClass(Arrays.asList(ID_FIELDS), studentClass);
+        studentIdField = findIdFieldOfEntityClass(studentClass);
         assertNotNull(studentIdField);
     }
 

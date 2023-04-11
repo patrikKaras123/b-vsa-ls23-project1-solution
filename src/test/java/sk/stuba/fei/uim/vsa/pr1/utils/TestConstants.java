@@ -12,7 +12,7 @@ public class TestConstants {
     public static final String USERNAME = getValueFromPersistenceProperty("javax.persistence.jdbc.user", null);
     //    public static final String PASSWORD = getEnvOrDefault("VSA_DB_PASSWORD", "vsa");
     public static final String PASSWORD = getValueFromPersistenceProperty("javax.persistence.jdbc.password", null);
-    public static final String[] ID_FIELDS = getEnvOrDefault("VSA_ID_FIELDS", "id,aisId,ais,aisid,ID").split(",");
+    //public static final String[] ID_FIELDS = getEnvOrDefault("VSA_ID_FIELDS", "id,aisId,ais,aisid,ID").split(",");
 
     public static final Map<String, String> ENV = System.getenv();
 

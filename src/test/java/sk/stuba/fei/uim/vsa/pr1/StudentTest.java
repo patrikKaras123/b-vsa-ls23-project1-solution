@@ -39,7 +39,7 @@ public class StudentTest {
         assertNotNull(studentClass);
         db = getDBConnection(DB, USERNAME, PASSWORD);
         assertNotNull(db);
-        studentIdField = findIdFieldOfEntityClass(Arrays.asList(ID_FIELDS), studentClass);
+        studentIdField = findIdFieldOfEntityClass(studentClass);
         assertNotNull(studentIdField);
     }
 
