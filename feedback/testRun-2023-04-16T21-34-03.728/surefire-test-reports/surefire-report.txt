@@ -1,0 +1,112 @@
+-------------------------------------------------------------------------------
+Test set: sk.stuba.fei.uim.vsa.pr1.TeacherTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 1.295 s <<< FAILURE! - in sk.stuba.fei.uim.vsa.pr1.TeacherTest
+TE02_shouldGetTeacher  Time elapsed: 0.143 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.TeacherTest.TE02_shouldGetTeacher(TeacherTest.java:73)
+
+TE06_emailShouldBeUnique  Time elapsed: 0.149 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.TeacherTest.TE06_emailShouldBeUnique(TeacherTest.java:173)
+
+TE01_shouldCreateTeacher  Time elapsed: 0.128 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.TeacherTest.TE01_shouldCreateTeacher(TeacherTest.java:61)
+
+TE04_shouldUpdateTeacher  Time elapsed: 0.137 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.TeacherTest.TE04_shouldUpdateTeacher(TeacherTest.java:127)
+
+---------------------------------------------------------------------
+ 
+-------------------------------------------------------------------------------
+Test set: sk.stuba.fei.uim.vsa.pr1.ThesisTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 13, Errors: 0, Skipped: 0, Time elapsed: 2.571 s <<< FAILURE! - in sk.stuba.fei.uim.vsa.pr1.ThesisTest
+TH09_shouldUpdateThesis  Time elapsed: 0.24 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH09_shouldUpdateThesis(ThesisTest.java:515)
+
+TH03_shouldSubmitThesis  Time elapsed: 0.141 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH03_shouldSubmitThesis(ThesisTest.java:306)
+
+TH02_shouldAssignThesisToStudent  Time elapsed: 0.137 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH02_shouldAssignThesisToStudent(ThesisTest.java:127)
+
+TH11_shouldDeleteThesisButNotStudent  Time elapsed: 0.161 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH11_shouldDeleteThesisButNotStudent(ThesisTest.java:554)
+
+TH02_1_shouldAssignThesisToStudentWithAlreadyAssignedThesis  Time elapsed: 0.153 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH02_1_shouldAssignThesisToStudentWithAlreadyAssignedThesis(ThesisTest.java:167)
+
+TH05_shouldGetAllTheses  Time elapsed: 0.187 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH05_shouldGetAllTheses(ThesisTest.java:369)
+
+TH10_shouldDeleteTeacherWithThesis  Time elapsed: 0.15 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH10_shouldDeleteTeacherWithThesis(ThesisTest.java:527)
+
+TH08_shouldGetAThesis  Time elapsed: 0.154 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH08_shouldGetAThesis(ThesisTest.java:466)
+
+TH04_shouldDeleteThesisButNotTeacher  Time elapsed: 0.15 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH04_shouldDeleteThesisButNotTeacher(ThesisTest.java:342)
+
+TH07_shouldGetThesisByStudent  Time elapsed: 0.165 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH07_shouldGetThesisByStudent(ThesisTest.java:427)
+
+TH02_2_shouldNOTAssignAlreadyAssignedThesis  Time elapsed: 0.143 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH02_2_shouldNOTAssignAlreadyAssignedThesis(ThesisTest.java:232)
+
+TH06_shouldGetAllThesesByTeacher  Time elapsed: 0.138 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH06_shouldGetAllThesesByTeacher(ThesisTest.java:393)
+
+TH01_shouldCreateThesisAssignment  Time elapsed: 0.135 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.ThesisTest.TH01_shouldCreateThesisAssignment(ThesisTest.java:72)
+
+---------------------------------------------------------------------
+ 
+-------------------------------------------------------------------------------
+Test set: sk.stuba.fei.uim.vsa.pr1.SanityCheckTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.052 s - in sk.stuba.fei.uim.vsa.pr1.SanityCheckTest
+---------------------------------------------------------------------
+ 
+-------------------------------------------------------------------------------
+Test set: sk.stuba.fei.uim.vsa.pr1.StudentTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.396 s <<< FAILURE! - in sk.stuba.fei.uim.vsa.pr1.StudentTest
+ST05_shouldDeleteStudent  Time elapsed: 0.107 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST05_shouldDeleteStudent(StudentTest.java:156)
+
+ST03_shouldGetAllStudents  Time elapsed: 0.111 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST03_shouldGetAllStudents(StudentTest.java:90)
+
+ST01_shouldCreateStudent  Time elapsed: 0.118 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST01_shouldCreateStudent(StudentTest.java:61)
+
+ST02_shouldGetStudent  Time elapsed: 0.126 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST02_shouldGetStudent(StudentTest.java:73)
+
+ST06_emailShouldBeUnique  Time elapsed: 0.127 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.StudentTest.ST06_emailShouldBeUnique(StudentTest.java:173)
+
+---------------------------------------------------------------------
+ 

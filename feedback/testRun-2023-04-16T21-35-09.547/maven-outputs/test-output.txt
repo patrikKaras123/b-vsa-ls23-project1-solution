@@ -1,0 +1,439 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< sk.stuba.fei.uim.vsa:b-vsa-ls23-project1 >--------------
+[INFO] Building b-vsa-ls23-project1 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ b-vsa-ls23-project1 ---
+[INFO] Deleting /tested--b-vsa-ls23-projekt-1/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /tested--b-vsa-ls23-projekt-1/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ b-vsa-ls23-project1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ b-vsa-ls23-project1 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ b-vsa-ls23-project1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tested--b-vsa-ls23-projekt-1/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ b-vsa-ls23-project1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /tested--b-vsa-ls23-projekt-1/target/test-classes
+[WARNING] /tested--b-vsa-ls23-projekt-1/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Some input files use unchecked or unsafe operations.
+[WARNING] /tested--b-vsa-ls23-projekt-1/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils/TestUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ b-vsa-ls23-project1 ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running sk.stuba.fei.uim.vsa.pr1.bonus.PageableTest
+2023-04-16 21:35:27.212  INFO --- [           main] org.reflections.Reflections              : Reflections took 195 ms to scan 2 urls, producing 8 keys and 12 values
+[EL Fine]: server: 2023-04-16 21:35:27.801--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-04-16 21:35:28.457--ServerSession(258535644)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.entities.Assignment] is set to [FIELD].
+[EL Config]: metadata: 2023-04-16 21:35:28.545--ServerSession(258535644)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field teacher] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.entities.Teacher.
+[EL Config]: metadata: 2023-04-16 21:35:28.548--ServerSession(258535644)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field student] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.entities.Student.
+[EL Config]: metadata: 2023-04-16 21:35:28.564--ServerSession(258535644)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.entities.Teacher] is set to [FIELD].
+[EL Config]: metadata: 2023-04-16 21:35:28.58--ServerSession(258535644)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field assignmentList] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.entities.Assignment.
+[EL Config]: metadata: 2023-04-16 21:35:28.582--ServerSession(258535644)--Thread(Thread[main,5,main])--The access type for the persistent class [class sk.stuba.fei.uim.vsa.pr1.entities.Student] is set to [FIELD].
+[EL Config]: metadata: 2023-04-16 21:35:28.583--ServerSession(258535644)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field assignment] is being defaulted to: class sk.stuba.fei.uim.vsa.pr1.entities.Assignment.
+[EL Config]: metadata: 2023-04-16 21:35:28.585--ServerSession(258535644)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.entities.Assignment] is being defaulted to: Assignment.
+[EL Config]: metadata: 2023-04-16 21:35:28.592--ServerSession(258535644)--Thread(Thread[main,5,main])--The table name for entity [class sk.stuba.fei.uim.vsa.pr1.entities.Assignment] is being defaulted to: ASSIGNMENT.
+[EL Config]: metadata: 2023-04-16 21:35:28.644--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [nazov] is being defaulted to: NAZOV.
+[EL Config]: metadata: 2023-04-16 21:35:28.646--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [popis] is being defaulted to: POPIS.
+[EL Config]: metadata: 2023-04-16 21:35:28.647--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [registracneCislo] is being defaulted to: REGISTRACNECISLO.
+[EL Config]: metadata: 2023-04-16 21:35:28.648--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [pracovisko] is being defaulted to: PRACOVISKO.
+[EL Config]: metadata: 2023-04-16 21:35:28.649--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [odovzdaniePrace] is being defaulted to: ODOVZDANIEPRACE.
+[EL Config]: metadata: 2023-04-16 21:35:28.65--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [typ] is being defaulted to: TYP.
+[EL Config]: metadata: 2023-04-16 21:35:28.663--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-04-16 21:35:28.665--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [datumZverejnenia] is being defaulted to: DATUMZVEREJNENIA.
+[EL Config]: metadata: 2023-04-16 21:35:28.666--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [status] is being defaulted to: STATUS.
+[EL Config]: metadata: 2023-04-16 21:35:28.667--ServerSession(258535644)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.entities.Teacher] is being defaulted to: Teacher.
+[EL Config]: metadata: 2023-04-16 21:35:28.668--ServerSession(258535644)--Thread(Thread[main,5,main])--The table name for entity [class sk.stuba.fei.uim.vsa.pr1.entities.Teacher] is being defaulted to: TEACHER.
+[EL Config]: metadata: 2023-04-16 21:35:28.673--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [oddelenie] is being defaulted to: ODDELENIE.
+[EL Config]: metadata: 2023-04-16 21:35:28.675--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [meno] is being defaulted to: MENO.
+[EL Config]: metadata: 2023-04-16 21:35:28.676--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [institut] is being defaulted to: INSTITUT.
+[EL Config]: metadata: 2023-04-16 21:35:28.677--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-16 21:35:28.678--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-04-16 21:35:28.681--ServerSession(258535644)--Thread(Thread[main,5,main])--The alias name for the entity class [class sk.stuba.fei.uim.vsa.pr1.entities.Student] is being defaulted to: Student.
+[EL Config]: metadata: 2023-04-16 21:35:28.682--ServerSession(258535644)--Thread(Thread[main,5,main])--The table name for entity [class sk.stuba.fei.uim.vsa.pr1.entities.Student] is being defaulted to: STUDENT.
+[EL Config]: metadata: 2023-04-16 21:35:28.683--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [rocnikStudia] is being defaulted to: ROCNIKSTUDIA.
+[EL Config]: metadata: 2023-04-16 21:35:28.684--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [semesterStudia] is being defaulted to: SEMESTERSTUDIA.
+[EL Config]: metadata: 2023-04-16 21:35:28.685--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [meno] is being defaulted to: MENO.
+[EL Config]: metadata: 2023-04-16 21:35:28.686--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [aisId] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-16 21:35:28.687--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2023-04-16 21:35:28.688--ServerSession(258535644)--Thread(Thread[main,5,main])--The column name for element [programStudia] is being defaulted to: PROGRAMSTUDIA.
+[EL Config]: metadata: 2023-04-16 21:35:28.742--ServerSession(258535644)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field teacher] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-16 21:35:28.743--ServerSession(258535644)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [teacher] is being defaulted to: TEACHER_AISID.
+[EL Config]: metadata: 2023-04-16 21:35:28.747--ServerSession(258535644)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field student] is being defaulted to: AISID.
+[EL Config]: metadata: 2023-04-16 21:35:28.749--ServerSession(258535644)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [student] is being defaulted to: STUDENT_AISID.
+[EL Info]: 2023-04-16 21:35:29.081--ServerSession(258535644)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+[EL Fine]: connection: 2023-04-16 21:35:29.094--ServerSession(258535644)--Connection(65488937)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "vsa"
+	datasource URL=> "jdbc:postgresql://localhost:5432/vsa_pr1_patrikkaras123"
+))
+[EL Config]: connection: 2023-04-16 21:35:29.599--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--Connected: jdbc:postgresql://localhost:5432/vsa_pr1_patrikkaras123
+	User: vsa
+	Database: PostgreSQL  Version: 15.2 (Debian 15.2-1.pgdg110+1)
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.4
+[EL Fine]: connection: 2023-04-16 21:35:29.701--ServerSession(258535644)--Thread(Thread[main,5,main])--/file:/tested--b-vsa-ls23-projekt-1/target/classes/_vsa-project-1 login successful
+[EL Fine]: sql: 2023-04-16 21:35:29.735--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_STUDENT_AISID
+[EL Fine]: sql: 2023-04-16 21:35:29.765--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.783--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "assignment" does not exist
+Error Code: 0
+Call: ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_STUDENT_AISID
+Query: DataModifyQuery(sql="ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_STUDENT_AISID")
+[EL Fine]: sql: 2023-04-16 21:35:29.786--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_TEACHER_AISID
+[EL Fine]: sql: 2023-04-16 21:35:29.787--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.789--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "assignment" does not exist
+Error Code: 0
+Call: ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_TEACHER_AISID
+Query: DataModifyQuery(sql="ALTER TABLE ASSIGNMENT DROP CONSTRAINT FK_ASSIGNMENT_TEACHER_AISID")
+[EL Fine]: sql: 2023-04-16 21:35:29.79--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.793--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.795--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.796--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE ASSIGNMENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.798--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.8--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "assignment" does not exist
+Error Code: 0
+Call: DROP TABLE ASSIGNMENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE ASSIGNMENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.801--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.804--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.806--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.807--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.808--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.809--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.81--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE ASSIGNMENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.812--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.813--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "assignment" does not exist
+Error Code: 0
+Call: DROP TABLE ASSIGNMENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE ASSIGNMENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.814--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.815--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.816--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.817--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.819--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.82--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.821--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE ASSIGNMENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.822--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.824--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "assignment" does not exist
+Error Code: 0
+Call: DROP TABLE ASSIGNMENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE ASSIGNMENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.824--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.826--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.827--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.827--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.829--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.83--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.83--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE ASSIGNMENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.831--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.832--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "assignment" does not exist
+Error Code: 0
+Call: DROP TABLE ASSIGNMENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE ASSIGNMENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.833--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.835--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.836--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.837--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE TEACHER CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.838--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.839--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "teacher" does not exist
+Error Code: 0
+Call: DROP TABLE TEACHER CASCADE
+Query: DataModifyQuery(sql="DROP TABLE TEACHER CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.839--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE ASSIGNMENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.84--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.841--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "assignment" does not exist
+Error Code: 0
+Call: DROP TABLE ASSIGNMENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE ASSIGNMENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.842--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DROP TABLE STUDENT CASCADE
+[EL Fine]: sql: 2023-04-16 21:35:29.844--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.845--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: table "student" does not exist
+Error Code: 0
+Call: DROP TABLE STUDENT CASCADE
+Query: DataModifyQuery(sql="DROP TABLE STUDENT CASCADE")
+[EL Fine]: sql: 2023-04-16 21:35:29.851--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-04-16 21:35:29.853--ServerSession(258535644)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2023-04-16 21:35:29.855--ServerSession(258535644)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.postgresql.util.PSQLException: ERROR: relation "sequence" does not exist
+  Position: 13
+Error Code: 0
+Call: DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+Query: DataModifyQuery(sql="DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'")
+[EL Warning]: ddl: 2023-04-16 21:35:29.863--ServerSession(258535644)--Thread(Thread[main,5,main])--Removing UNIQUE constraint definition from [TEACHER.AISID] because it is also a primary key.
+[EL Fine]: sql: 2023-04-16 21:35:29.864--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--CREATE TABLE TEACHER (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) UNIQUE, INSTITUT VARCHAR(255), MENO VARCHAR(255), ODDELENIE VARCHAR(255), PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-04-16 21:35:29.898--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--CREATE TABLE ASSIGNMENT (ID BIGINT NOT NULL, DATUMZVEREJNENIA DATE, NAZOV VARCHAR(255), ODOVZDANIEPRACE DATE, POPIS VARCHAR(255), PRACOVISKO VARCHAR(255), REGISTRACNECISLO VARCHAR(255) NOT NULL UNIQUE, STATUS VARCHAR(255), TYP VARCHAR(255), TEACHER_AISID BIGINT NOT NULL, STUDENT_AISID BIGINT, PRIMARY KEY (ID))
+[EL Warning]: ddl: 2023-04-16 21:35:29.932--ServerSession(258535644)--Thread(Thread[main,5,main])--Removing UNIQUE constraint definition from [STUDENT.AISID] because it is also a primary key.
+[EL Fine]: sql: 2023-04-16 21:35:29.933--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--CREATE TABLE STUDENT (AISID BIGINT NOT NULL, EMAIL VARCHAR(255) UNIQUE, MENO VARCHAR(255), PROGRAMSTUDIA VARCHAR(255), ROCNIKSTUDIA INTEGER, SEMESTERSTUDIA INTEGER, PRIMARY KEY (AISID))
+[EL Fine]: sql: 2023-04-16 21:35:29.96--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--ALTER TABLE ASSIGNMENT ADD CONSTRAINT FK_ASSIGNMENT_STUDENT_AISID FOREIGN KEY (STUDENT_AISID) REFERENCES STUDENT (AISID)
+[EL Fine]: sql: 2023-04-16 21:35:29.969--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--ALTER TABLE ASSIGNMENT ADD CONSTRAINT FK_ASSIGNMENT_TEACHER_AISID FOREIGN KEY (TEACHER_AISID) REFERENCES TEACHER (AISID)
+[EL Fine]: sql: 2023-04-16 21:35:29.977--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT DECIMAL(38), PRIMARY KEY (SEQ_NAME))
+[EL Fine]: sql: 2023-04-16 21:35:29.988--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+[EL Fine]: sql: 2023-04-16 21:35:29.992--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+2023-04-16 21:35:29.999  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.ThesisService
+2023-04-16 21:35:30.020  INFO --- [           main] org.reflections.Reflections              : Reflections took 19 ms to scan 2 urls, producing 8 keys and 12 values
+[EL Fine]: moxy: 2023-04-16 21:35:30.027--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@13f95696
+2023-04-16 21:35:30.034  INFO --- [           main] s.stuba.fei.uim.vsa.pr1.utils.TestUtils  : Thesis service class: sk.stuba.fei.uim.vsa.pr1.ThesisService
+[EL Fine]: sql: 2023-04-16 21:35:30.955--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent1@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:30.97--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [1]
+[EL Fine]: sql: 2023-04-16 21:35:30.987--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent1@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.002--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [1]
+[EL Fine]: sql: 2023-04-16 21:35:31.029--ClientSession(1200048933)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [1, xstudent1@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.098--ClientSession(732597634)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [3, 3, 1]
+[EL Fine]: sql: 2023-04-16 21:35:31.112--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent2@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.115--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [2]
+[EL Fine]: sql: 2023-04-16 21:35:31.117--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent2@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.12--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [2]
+[EL Fine]: sql: 2023-04-16 21:35:31.129--ClientSession(176041373)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [2, xstudent2@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.143--ClientSession(49318987)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [1, 1, 2]
+[EL Fine]: sql: 2023-04-16 21:35:31.152--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent3@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.155--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [3]
+[EL Fine]: sql: 2023-04-16 21:35:31.157--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent3@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.16--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [3]
+[EL Fine]: sql: 2023-04-16 21:35:31.163--ClientSession(172518776)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [3, xstudent3@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.178--ClientSession(1240843015)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [3, 3, 3]
+[EL Fine]: sql: 2023-04-16 21:35:31.188--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent4@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.191--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [4]
+[EL Fine]: sql: 2023-04-16 21:35:31.194--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent4@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.197--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [4]
+[EL Fine]: sql: 2023-04-16 21:35:31.202--ClientSession(1726616678)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [4, xstudent4@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.215--ClientSession(1367068823)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [1, 1, 4]
+[EL Fine]: sql: 2023-04-16 21:35:31.224--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent5@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.228--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [5]
+[EL Fine]: sql: 2023-04-16 21:35:31.231--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent5@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.234--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [5]
+[EL Fine]: sql: 2023-04-16 21:35:31.237--ClientSession(1193841543)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [5, xstudent5@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.251--ClientSession(855547146)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [3, 3, 5]
+[EL Fine]: sql: 2023-04-16 21:35:31.259--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent6@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.261--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [6]
+[EL Fine]: sql: 2023-04-16 21:35:31.265--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent6@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.267--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [6]
+[EL Fine]: sql: 2023-04-16 21:35:31.27--ClientSession(14124949)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [6, xstudent6@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.278--ClientSession(560549459)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [1, 1, 6]
+[EL Fine]: sql: 2023-04-16 21:35:31.287--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent7@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.29--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [7]
+[EL Fine]: sql: 2023-04-16 21:35:31.294--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent7@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.297--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [7]
+[EL Fine]: sql: 2023-04-16 21:35:31.299--ClientSession(1895479349)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [7, xstudent7@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.311--ClientSession(1856093404)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [3, 3, 7]
+[EL Fine]: sql: 2023-04-16 21:35:31.323--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent8@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.325--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [8]
+[EL Fine]: sql: 2023-04-16 21:35:31.328--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent8@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.331--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [8]
+[EL Fine]: sql: 2023-04-16 21:35:31.334--ClientSession(1397333381)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [8, xstudent8@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.345--ClientSession(95322593)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [1, 1, 8]
+[EL Fine]: sql: 2023-04-16 21:35:31.354--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent9@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.363--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [9]
+[EL Fine]: sql: 2023-04-16 21:35:31.366--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent9@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.368--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [9]
+[EL Fine]: sql: 2023-04-16 21:35:31.371--ClientSession(1617156106)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [9, xstudent9@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.381--ClientSession(619929778)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [3, 3, 9]
+[EL Fine]: sql: 2023-04-16 21:35:31.389--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xstudent10@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.392--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [10]
+[EL Fine]: sql: 2023-04-16 21:35:31.394--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xstudent10@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.396--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [10]
+[EL Fine]: sql: 2023-04-16 21:35:31.4--ClientSession(1997344422)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO STUDENT (AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [10, xstudent10@stuba.sk, Test-Student, null, null, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.414--ClientSession(1827303532)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE STUDENT SET ROCNIKSTUDIA = ?, SEMESTERSTUDIA = ? WHERE (AISID = ?)
+	bind => [1, 1, 10]
+2023-04-16 21:35:31.455  INFO --- [           main] org.reflections.Reflections              : Reflections took 29 ms to scan 2 urls, producing 8 keys and 12 values
+[EL Fine]: sql: 2023-04-16 21:35:31.468--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT
+[EL Fine]: sql: 2023-04-16 21:35:31.482--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT
+[EL Fine]: sql: 2023-04-16 21:35:31.492--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT
+[EL Fine]: sql: 2023-04-16 21:35:31.674--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [xteacher1@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.68--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [1]
+[EL Fine]: sql: 2023-04-16 21:35:31.682--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [xteacher1@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.85--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (EMAIL = ?)
+	bind => [test.teacher@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.853--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, INSTITUT, MENO, ODDELENIE FROM TEACHER WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-04-16 21:35:31.855--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (EMAIL = ?)
+	bind => [test.teacher@stuba.sk]
+[EL Fine]: sql: 2023-04-16 21:35:31.858--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT AISID, EMAIL, MENO, PROGRAMSTUDIA, ROCNIKSTUDIA, SEMESTERSTUDIA FROM STUDENT WHERE (AISID = ?)
+	bind => [80123]
+[EL Fine]: sql: 2023-04-16 21:35:31.861--ClientSession(461516748)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO TEACHER (AISID, EMAIL, INSTITUT, MENO, ODDELENIE) VALUES (?, ?, ?, ?, ?)
+	bind => [80123, test.teacher@stuba.sk, Software engineering, Test-Teacher, Software engineering]
+[EL Fine]: sql: 2023-04-16 21:35:31.885--ClientSession(485686996)--Connection(176683244)--Thread(Thread[main,5,main])--UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [50, SEQ_GEN]
+[EL Fine]: sql: 2023-04-16 21:35:31.888--ClientSession(485686996)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [SEQ_GEN]
+[EL Fine]: sql: 2023-04-16 21:35:31.905--ClientSession(485686996)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [1, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-6fce13a3-8be3-481b-8f02-7924829970da, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.922--ClientSession(1611221523)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [2, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-486ffb0a-c708-46a7-a1de-6ae6f1ddff03, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.943--ClientSession(1185618138)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-907aefe9-b1a4-4d4d-9782-88dba7b93a06, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.96--ClientSession(1495445111)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-dc485fbb-6c3e-4b17-b8dd-d70f2844e894, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:31.981--ClientSession(557197074)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [5, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-2ce67d07-41de-4ec8-bde1-5ade44ba9b07, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.001--ClientSession(443491171)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [6, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-77ec264e-3ec1-4dd6-ab93-00b91fea1840, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.016--ClientSession(145455292)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [7, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-d55ecf7f-27cb-4b10-b5f5-d3fc7a1af68d, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.032--ClientSession(1443173326)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-3379bd22-781b-414a-bcf4-97ca111d8b4a, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.048--ClientSession(220165304)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [9, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-168351a8-10ad-4fc5-a670-b4485d7d0877, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.07--ClientSession(695248316)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [10, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-dbbd5c82-b178-4a72-99c5-7e632cb04d28, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.085--ClientSession(608817143)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [11, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-e878a777-cf61-4f92-96f2-05a6cd4f29a8, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.108--ClientSession(203409950)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [12, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-dd5fa903-ea5d-4a95-8968-03f88a4ca307, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.124--ClientSession(1541942595)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [13, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-eda4b6a4-b365-477c-bf02-93bdf1715e78, VOLNA, BACHELOR, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.147--ClientSession(712732521)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [14, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-f438c92d-2ce6-4704-872b-a9929af25bb9, VOLNA, MASTER, 80123, null]
+[EL Fine]: sql: 2023-04-16 21:35:32.167--ClientSession(1624788833)--Connection(176683244)--Thread(Thread[main,5,main])--INSERT INTO ASSIGNMENT (ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [15, 2023-04-16, Excellent Simple Bachelor Thesis, 2023-07-16, Some description of the thesis, Software engineering, FEI-Test-Teacher-d1b3f86e-c58e-405f-aeb6-dd33bc07ec2c, VOLNA, BACHELOR, 80123, null]
+2023-04-16 21:35:32.200  INFO --- [           main] org.reflections.Reflections              : Reflections took 23 ms to scan 2 urls, producing 8 keys and 12 values
+[EL Fine]: sql: 2023-04-16 21:35:32.206--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID FROM ASSIGNMENT
+2023-04-16 21:35:32.245  INFO --- [           main] org.reflections.Reflections              : Reflections took 20 ms to scan 2 urls, producing 8 keys and 12 values
+[EL Fine]: sql: 2023-04-16 21:35:32.249--ServerSession(258535644)--Connection(176683244)--Thread(Thread[main,5,main])--SELECT ID, DATUMZVEREJNENIA, NAZOV, ODOVZDANIEPRACE, POPIS, PRACOVISKO, REGISTRACNECISLO, STATUS, TYP, TEACHER_AISID, STUDENT_AISID FROM ASSIGNMENT
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.655 s <<< FAILURE! - in sk.stuba.fei.uim.vsa.pr1.bonus.PageableTest
+[ERROR] shouldGetPageOfTeachers  Time elapsed: 0.187 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at sk.stuba.fei.uim.vsa.pr1.bonus.PageableTest.shouldGetPageOfTeachers(PageableTest.java:131)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   PageableTest.shouldGetPageOfTeachers:131 expected: not <null>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.561 s
+[INFO] Finished at: 2023-04-16T21:35:32Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project b-vsa-ls23-project1: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /tested--b-vsa-ls23-projekt-1/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
