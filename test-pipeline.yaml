@@ -1,0 +1,149 @@
+name: b-vsa-ls23-projekt-1
+resultsDestination: results
+tools:
+  - name: database
+    parameters:
+      url: jdbc:postgresql://localhost:5432/
+      name: vsa_pr1_${USERNAME}
+      username: vsa
+      password: vsa
+      driver: org.postgresql.Driver
+  - name: maven
+    parameters:
+      output: maven-outputs/test-output.txt
+      errorOutput: maven-outputs/test-error-output.txt
+      surefireOutput: surefire-test-reports
+      surefire: $project$/target/surefire-reports
+  - name: git
+    parameters:
+      token: ${GITHUB_TOKEN}
+      author: ${GITHUB_TEACHER}
+      output: $feedback$/git-outputs/git-output.txt
+      errorOutput: $feedback$/git-outputs/git-error-output.txt
+stages:
+  - name: cloning
+    type: prep
+    steps:
+      - tool: git
+        steps:
+          - step: clone
+            repo: ${URL}.git
+            target: $project$
+            isStudentProject: true
+          - step: clone
+            repo: https://github.com/Interes-Group/b-vsa-ls23-project1-solution.git
+            target: tests
+      - tool: globals
+        steps:
+          - step: set
+            key: tests
+            value: tests
+  - name: preparation
+    type: prep
+    steps:
+      - tool: maven
+        steps:
+          - step: dependency
+            dep: "org.postgresql:postgresql:42.5.4"
+          - step: dependency
+            dep: "org.eclipse.persistence:eclipselink:2.7.11"
+          - step: dependency
+            dep: "org.eclipse.persistence:javax.persistence:2.2.1"
+          - step: dependency
+            dep: "org.reflections:reflections:0.10.2"
+          - step: dependency
+            dep: "ch.qos.logback:logback-core:1.3.5"
+          - step: dependency
+            dep: "ch.qos.logback:logback-classic:1.3.5"
+          - step: dependency
+            dep: "org.slf4j:slf4j-api:2.0.4"
+          - step: dependency
+            dep: "org.junit.jupiter:junit-jupiter-engine:5.8.2"
+            scope: test
+          - step: dependency
+            dep: "org.junit.jupiter:junit-jupiter-api:5.8.2"
+            scope: test
+          - step: plugin
+            dep: "org.apache.maven.plugins:maven-surefire-plugin:2.22.2"
+      - tool: database
+        steps:
+          - step: property
+            name: "javax.persistence.jdbc.url"
+            value: $database.url$$database.name$
+          - step: property
+            name: "javax.persistence.jdbc.user"
+            value: $database.username$
+          - step: property
+            name: "javax.persistence.jdbc.password"
+            value: $database.password$
+          - step: property
+            name: "javax.persistence.jdbc.driver"
+            value: $database.driver$
+          - step: property
+            name: "javax.persistence.schema-generation.database.action"
+            value: drop-and-create
+          - step: property
+            name: "eclipselink.target-database"
+            value: PostgreSQL
+          - step: property
+            name: "eclipselink.logging.level"
+            value: FINE
+          - step: property
+            name: "eclipselink.logging.parameters"
+            value: "true"
+  - name: tests
+    type: test
+    parameters:
+      points: 15
+    steps:
+      - tool: database
+        steps:
+          - step: clear
+      - tool: file
+        steps:
+          - step: purge
+            path: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1
+          - step: copyDir
+            source: $tests$/src/test/java/sk/stuba/fei/uim/vsa/pr1
+            target: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1
+          - step: copyDir
+            source: $tests$/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils
+            target: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils
+      - tool: maven
+        steps:
+          - step: run
+            goals: "clean compile test"
+          - step: parseSurefire
+  - name: bonusTests
+    type: test
+    parameters:
+      points: 3
+      bonus: true
+    steps:
+      - tool: database
+        steps:
+          - step: clear
+      - tool: file
+        steps:
+          - step: purge
+            path: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1
+          - step: copyDir
+            source: $tests$/src/test/java/sk/stuba/fei/uim/vsa/pr1/bonus
+            target: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1/bonus
+          - step: copyDir
+            source: $tests$/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils
+            target: $project$/src/test/java/sk/stuba/fei/uim/vsa/pr1/utils
+      - tool: maven
+        steps:
+          - step: run
+            goals: "clean compile test"
+          - step: parseSurefire
+  - name: pushFeedback
+    type: cleanup
+    steps:
+      - tool: file
+        steps:
+          - step: copyDir
+            source: $feedback$
+            target: $resultsDestination$
+            recursive: true
