@@ -31,7 +31,7 @@ public class Student implements Serializable {
     private Integer term;
     private String studyProgramme;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "author")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "author")
     private Thesis thesis;
 
     public Student() {

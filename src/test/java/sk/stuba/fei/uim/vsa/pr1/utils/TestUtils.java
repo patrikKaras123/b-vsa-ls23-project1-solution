@@ -101,6 +101,19 @@ public class TestUtils {
         return check;
     }
 
+    public static <T> boolean checkIfFieldHasSetter(Object obj, String fieldName, Class<T> fieldType) {
+        try {
+            Method setter = obj.getClass().getMethod("set" + capitalize(fieldName), fieldType);
+            return setter != null
+                    && setter.getParameterCount() == 1
+                    && setter.getParameterTypes()[0] == fieldType
+                    && Modifier.isPublic(setter.getModifiers());
+        } catch (NoSuchMethodException e) {
+            log.error(e.getMessage(), e);
+            return false;
+        }
+    }
+
     public static String capitalize(String str) {
         if (str.length() == 0) return "";
         if (str.length() == 1) return str.toUpperCase();
@@ -249,7 +262,8 @@ public class TestUtils {
 
     public static List<String> tables = new ArrayList<>();
 
-    private static final Set<String> IGNORE_TABLES = new HashSet<>(Arrays.asList("seq_gen_sequence","sequence"));
+    private static final Set<String> IGNORE_TABLES = new HashSet<>(Arrays.asList("seq_gen_sequence", "sequence"));
+
     public static void clearDB(Connection dbConnection) {
         if (tables.isEmpty()) {
             try (Statement stmt = dbConnection.createStatement()) {

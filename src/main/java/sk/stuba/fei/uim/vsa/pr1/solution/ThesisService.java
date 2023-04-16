@@ -5,28 +5,27 @@ import sk.stuba.fei.uim.vsa.pr1.bonus.Page;
 import sk.stuba.fei.uim.vsa.pr1.bonus.Pageable;
 import sk.stuba.fei.uim.vsa.pr1.bonus.PageableThesisService;
 
-import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import java.security.SecureRandom;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.Supplier;
+
+import static sk.stuba.fei.uim.vsa.pr1.solution.ThesisServiceUtils.asDate;
+import static sk.stuba.fei.uim.vsa.pr1.solution.ThesisServiceUtils.asLocalDate;
 
 public class ThesisService extends AbstractThesisService<Student, Teacher, Thesis> implements PageableThesisService<Student, Teacher, Thesis> {
 
+    private final ThesisServiceUtils utils;
+
     public ThesisService() {
         super();
+        utils = new ThesisServiceUtils(this.emf);
     }
 
     @Override
     public Student createStudent(Long aisId, String name, String email) {
         log.info("Creating student with AIS ID " + aisId);
-        return create(() -> Student.builder()
+        return utils.create(() -> Student.builder()
                 .aisId(aisId)
                 .name(name)
                 .email(email)
@@ -37,7 +36,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
     public Student getStudent(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        return findOne(id, Student.class);
+        return utils.findOne(id, Student.class);
     }
 
     @Override
@@ -46,32 +45,37 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             throw new IllegalArgumentException("Provided student must not be null");
         if (student.getAisId() == null)
             throw new IllegalArgumentException("Provided student.aisId must not be null");
-        return update(student);
+        return utils.update(student);
     }
 
     @Override
     public List<Student> getStudents() {
-        return findByNamedQuery(Student.FIND_ALL_QUERY, Student.class, Collections.emptyMap());
+        return utils.findByNamedQuery(Student.FIND_ALL_QUERY, Student.class, Collections.emptyMap());
     }
 
     @Override
     public Student deleteStudent(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        Student student = delete(id, Student.class);
-        Thesis thesis = this.getThesisByStudent(student.getAisId());
-        if (thesis != null) {
-            thesis.setAuthor(null);
-            thesis.setStatus(Thesis.Status.FREE_TO_TAKE);
-            this.updateThesis(thesis);
+        try {
+            Student student = utils.delete(id, Student.class);
+            Thesis thesis = this.getThesisByStudent(student.getAisId());
+            if (thesis != null) {
+                thesis.setAuthor(null);
+                thesis.setStatus(ThesisStatus.FREE_TO_TAKE);
+                this.updateThesis(thesis);
+            }
+            return student;
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            return null;
         }
-        return student;
     }
 
-    // TODO CHYBA department má byť institue
     @Override
     public Teacher createTeacher(Long aisId, String name, String email, String department) {
-        return create(() -> Teacher.builder()
+        log.info("Creating teacher with AIS ID " + aisId);
+        return utils.create(() -> Teacher.builder()
                 .aisId(aisId)
                 .name(name)
                 .email(email)
@@ -84,7 +88,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
     public Teacher getTeacher(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        return findOne(id, Teacher.class);
+        return utils.findOne(id, Teacher.class);
     }
 
     @Override
@@ -93,28 +97,27 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             throw new IllegalArgumentException("Provided teacher must not be null");
         if (teacher.getAisId() == null)
             throw new IllegalArgumentException("Provided teacher.aisId must not be null");
-        return update(teacher);
+        return utils.update(teacher);
     }
 
     @Override
     public List<Teacher> getTeachers() {
-        return findByNamedQuery(Teacher.FIND_ALL_QUERY, Teacher.class, Collections.emptyMap());
+        return utils.findByNamedQuery(Teacher.FIND_ALL_QUERY, Teacher.class, Collections.emptyMap());
     }
 
     @Override
     public Teacher deleteTeacher(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        List<Thesis> theses = getThesesByTeacher(id);
-        if (!theses.isEmpty()) {
-            theses.stream().map(Thesis::getId).forEach(this::deleteThesis);
-        }
-        return delete(id, Teacher.class);
+        utils.execute("delete from Thesis t where t.supervisor.aisId = :teacherId", Collections.singletonMap("teacherId", id), true);
+        return utils.delete(id, Teacher.class);
     }
 
     @Override
     public Thesis makeThesisAssignment(Long supervisor, String title, String type, String description) {
-        return create(() -> {
+        if (supervisor == null)
+            throw new IllegalArgumentException("Supervisor id must not be null");
+        return utils.create(() -> {
             Teacher teacher = this.getTeacher(supervisor);
             if (teacher == null)
                 throw new IllegalArgumentException("Provided supervisor teacher with id '" + supervisor + "' has not been found!");
@@ -123,8 +126,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
                     .registrationNumber("FEI-" + new SecureRandom().nextInt(99999))
                     .title(title)
                     .description(description)
-                    .type(Thesis.Type.valueOf(type.toUpperCase()))
-                    .status(Thesis.Status.FREE_TO_TAKE)
+                    .type(ThesisType.valueOf(type.toUpperCase()))
+                    .status(ThesisStatus.FREE_TO_TAKE)
                     .supervisor(teacher)
                     .department(teacher.getDepartment())
                     .publishedOn(asDate(now))
@@ -135,56 +138,68 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
 
     @Override
     public Thesis assignThesis(Long thesisId, Long studentId) {
+        if (thesisId == null)
+            throw new IllegalArgumentException("Thesis Id must not be null");
+        if (studentId == null)
+            throw new IllegalArgumentException("Student id must not be null");
         Thesis thesis = getThesis(thesisId);
         if (thesis == null)
             throw new IllegalArgumentException("Thesis with id '" + thesisId + "' has not been found!");
-        if (thesis.getStatus() != Thesis.Status.FREE_TO_TAKE)
+        if (thesis.getStatus() != ThesisStatus.FREE_TO_TAKE)
             throw new IllegalStateException("Thesis is not in the state to be assigned to a student");
         if (LocalDate.now().isAfter(asLocalDate(thesis.getDeadline())))
             throw new IllegalStateException("Thesis cannot be assigned to a student after the deadline on " + thesis.getDeadline().toString());
         Student student = getStudent(studentId);
         if (student == null)
             throw new IllegalArgumentException("Student with id '" + studentId + "' has not been found!");
+        Thesis oldThesis = getThesisByStudent(student.getAisId());
+        if (oldThesis != null) {
+            oldThesis.setAuthor(null);
+            oldThesis.setStatus(ThesisStatus.FREE_TO_TAKE);
+            utils.update(oldThesis);
+        }
         thesis.setAuthor(student);
-        thesis.setStatus(Thesis.Status.IN_PROGRESS);
-        return update(thesis);
+        thesis.setStatus(ThesisStatus.IN_PROGRESS);
+        return utils.update(thesis);
     }
 
     @Override
     public Thesis submitThesis(Long thesisId) {
+        if (thesisId == null)
+            throw new IllegalArgumentException("Thesis id must not be null");
         Thesis thesis = getThesis(thesisId);
         if (thesis == null)
             throw new IllegalArgumentException("Thesis with id '" + thesisId + "' has not been found");
         if (LocalDate.now().isAfter(asLocalDate(thesis.getDeadline())))
             throw new IllegalStateException("Thesis cannot be submitted after the deadline on " + thesis.getDeadline().toString());
-        if (thesis.getStatus() != Thesis.Status.IN_PROGRESS)
+        if (thesis.getStatus() != ThesisStatus.IN_PROGRESS)
             throw new IllegalStateException("Thesis is not in the state to be submitted");
         if (thesis.getAuthor() == null)
             throw new IllegalStateException("Thesis cannot be submitted if it hasn't been assigned to a student");
-        thesis.setStatus(Thesis.Status.SUBMITTED);
-        return update(thesis);
+        thesis.setStatus(ThesisStatus.SUBMITTED);
+        return utils.update(thesis);
     }
 
     @Override
     public Thesis deleteThesis(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        return delete(id, Thesis.class);
+        return utils.delete(id, Thesis.class);
     }
 
     @Override
     public List<Thesis> getTheses() {
-        return findByNamedQuery(Thesis.FIND_ALL_QUERY, Thesis.class, Collections.emptyMap());
+        return utils.findByNamedQuery(Thesis.FIND_ALL_QUERY, Thesis.class, Collections.emptyMap());
     }
 
     @Override
     public List<Thesis> getThesesByTeacher(Long teacherId) {
-        return findByNamedQuery(Thesis.FIND_ALL_BY_SUPERVISOR, Thesis.class, Collections.singletonMap("teacherId", teacherId));
+        return utils.findByNamedQuery(Thesis.FIND_ALL_BY_SUPERVISOR, Thesis.class, Collections.singletonMap("teacherId", teacherId));
     }
 
     @Override
     public Thesis getThesisByStudent(Long studentId) {
-        List<Thesis> results = findByNamedQuery(Thesis.FIND_ALL_BY_AUTHOR, Thesis.class, Collections.singletonMap("studentId", studentId));
+        List<Thesis> results = utils.findByNamedQuery(Thesis.FIND_ALL_BY_AUTHOR, Thesis.class, Collections.singletonMap("studentId", studentId));
         return results.stream().findFirst().orElse(null);
     }
 
@@ -192,7 +207,7 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
     public Thesis getThesis(Long id) {
         if (id == null)
             throw new IllegalArgumentException("Provided id must not be null");
-        return findOne(id, Thesis.class);
+        return utils.findOne(id, Thesis.class);
     }
 
     @Override
@@ -201,26 +216,29 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             throw new IllegalArgumentException("Provided thesis must not be null");
         if (thesis.getId() == null)
             throw new IllegalArgumentException("Provided thesis.id must not be null");
-        return update(thesis);
+        return utils.update(thesis);
     }
+
+    // --- BONUS ---
 
     @Override
     public Page<Student> findStudents(Optional<String> name, Optional<String> year, Pageable pageable) {
         String query = "select s from Student s";
         List<String> conditions = new ArrayList<>();
         name.ifPresent(s -> conditions.add("s.name like '%" + s + "%'"));
-        year.ifPresent(s -> conditions.add("s.year = " + s));
+        year.ifPresent(s -> conditions.add("s.year = " + Integer.parseInt(s)));
         if (!conditions.isEmpty()) {
             query += " where ";
             query += String.join(" and ", conditions);
         }
         final String finalQuery = query;
-        List<Student> students = findByQuery(em ->
+        List<Student> students = utils.findByQuery(em ->
                 em.createQuery(finalQuery, Student.class)
                         .setMaxResults(pageable.getPageSize())
                         .setFirstResult(pageable.getPageSize() * pageable.getPageNumber()));
         Page<Student> page = new PageImpl<>(students, pageable);
-        page.setTotalElements(getCount(query, "aisId", Collections.emptyMap()));
+        page.setTotalElements(utils.getCount(query, Collections.emptyMap()));
+        page.getTotalPages();
         return page;
     }
 
@@ -235,12 +253,13 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             query += String.join(" and ", conditions);
         }
         final String finalQuery = query;
-        List<Teacher> teachers = findByQuery(em ->
+        List<Teacher> teachers = utils.findByQuery(em ->
                 em.createQuery(finalQuery, Teacher.class)
                         .setMaxResults(pageable.getPageSize())
                         .setFirstResult(pageable.getPageSize() * pageable.getPageNumber()));
         Page<Teacher> page = new PageImpl<>(teachers, pageable);
-        page.setTotalElements(getCount(query, "aisId", Collections.emptyMap()));
+        page.setTotalElements(utils.getCount(query, Collections.emptyMap()));
+        page.getTotalPages();
         return page;
     }
 
@@ -259,18 +278,18 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
         });
         type.ifPresent(t -> {
             conditions.add("t.type = :ttype");
-            parameters.put("ttype", Thesis.Type.valueOf(t.toUpperCase()));
+            parameters.put("ttype", ThesisType.valueOf(t.toUpperCase()));
         });
         status.ifPresent(s -> {
             conditions.add("t.status = :sstatus");
-            parameters.put("sstatus", Thesis.Status.valueOf(s.toUpperCase()));
+            parameters.put("sstatus", ThesisStatus.valueOf(s.toUpperCase()));
         });
         if (!conditions.isEmpty()) {
             query += " where ";
             query += String.join(" and ", conditions);
         }
         final String finalQuery = query;
-        List<Thesis> theses = findByQuery(em -> {
+        List<Thesis> theses = utils.findByQuery(em -> {
             TypedQuery<Thesis> q = em.createQuery(finalQuery, Thesis.class)
                     .setMaxResults(pageable.getPageSize())
                     .setFirstResult(pageable.getPageSize() * pageable.getPageNumber());
@@ -280,149 +299,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
             return q;
         });
         Page<Thesis> page = new PageImpl<>(theses, pageable);
-        page.setTotalElements(getCount(query, "id", parameters));
+        page.setTotalElements(utils.getCount(query, parameters));
+        page.getTotalPages();
         return page;
-    }
-
-
-    // Some generic methods to help
-    private <R> R create(Supplier<R> createFunction) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            manager.getTransaction().begin();
-            R object = createFunction.get();
-            manager.persist(object);
-            manager.getTransaction().commit();
-            return object;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            if (manager.getTransaction().isActive())
-                manager.getTransaction().rollback();
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> R update(R entity) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            manager.getTransaction().begin();
-            manager.merge(entity);
-            manager.getTransaction().commit();
-            return entity;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            if (manager.getTransaction().isActive())
-                manager.getTransaction().rollback();
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> R findOne(Long id, Class<R> clazz) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            return manager.find(clazz, id);
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> List<R> findByQuery(Function<EntityManager, TypedQuery<R>> querySupplier) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            TypedQuery<R> query = querySupplier.apply(manager);
-            return query.getResultList();
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return new ArrayList<>();
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> List<R> findByNamedQuery(String queryName, Class<R> clazz, Map<String, Object> parameters) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            TypedQuery<R> query = manager.createNamedQuery(queryName, clazz);
-            if (parameters != null && !parameters.isEmpty()) {
-                parameters.forEach(query::setParameter);
-            }
-            return query.getResultList();
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return new ArrayList<>();
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> R delete(Long id, Class<R> clazz) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            manager.getTransaction().begin();
-            R entity = manager.find(clazz, id);
-            if (entity == null) {
-                throw new IllegalArgumentException("Cannot find entity of class '" + clazz.getSimpleName() + "' with id '" + id + "'");
-            }
-            manager.remove(entity);
-            manager.getTransaction().commit();
-            return entity;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            if (manager.getTransaction().isActive())
-                manager.getTransaction().rollback();
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private <R> Long getCount(Class<R> clazz) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            CriteriaBuilder cb = manager.getCriteriaBuilder();
-            CriteriaQuery<Long> cq = cb.createQuery(Long.class);
-            cq.select(cb.count(cq.from(clazz)));
-            TypedQuery<Long> query = manager.createQuery(cq);
-            return query.getSingleResult();
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private Long getCount(String query, String primaryKey, Map<String, Object> parameters) {
-        EntityManager manager = this.emf.createEntityManager();
-        try {
-            int fromIndex = query.indexOf("from");
-            String entity = query.substring(fromIndex).split(" ")[2];
-            query = "select count(" + entity + ") " + query.substring(fromIndex);
-            TypedQuery<Long> q = manager.createQuery(query, Long.class);
-            if (parameters != null && !parameters.isEmpty()) {
-                parameters.forEach(q::setParameter);
-            }
-            return q.getSingleResult();
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return null;
-        } finally {
-            manager.close();
-        }
-    }
-
-    private static Date asDate(LocalDate localDate) {
-        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-    }
-
-    private static LocalDate asLocalDate(Date date) {
-        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
     }
 }

@@ -12,7 +12,8 @@ import sk.stuba.fei.uim.vsa.pr1.utils.TestData;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -75,6 +76,18 @@ public class PageableTest {
                     "xstudent" + i + "@stuba.sk");
             assertNotNull(student01);
             assertInstanceOf(studentClass, student01);
+            List<String> intFields = findField(student01, Integer.class);
+            assertNotNull(intFields);
+            assertTrue(intFields.size() > 0);
+            int finalI = i;
+            intFields.forEach(f -> {
+                try {
+                    setFieldValue(student01, f, finalI % 2 == 0 ? 1 : 3);
+                } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            thesisService.updateStudent(student01);
         }
 
         Pageable pageable = createPageable(0, 5);
@@ -95,6 +108,15 @@ public class PageableTest {
         assertEquals(10, students.getTotalElements());
         assertEquals(2, students.getTotalPages());
         assertEquals(1, students.getPageable().getPageNumber());
+        assertTrue(students.getContent().stream().allMatch(studentClass::isInstance));
+
+        students = pagedThesisService.findStudents(Optional.empty(), Optional.of("3"), pageable);
+        assertNotNull(students);
+        assertNotNull(students.getContent());
+        assertEquals(5, students.getContent().size());
+        assertEquals(5, students.getTotalElements());
+        assertEquals(1, students.getTotalPages());
+        assertEquals(0, students.getPageable().getPageNumber());
         assertTrue(students.getContent().stream().allMatch(studentClass::isInstance));
     }
 
@@ -152,6 +174,17 @@ public class PageableTest {
         assertEquals(8, theses.getTotalElements());
         assertEquals(2, theses.getTotalPages());
         assertEquals(1, theses.getPageable().getPageNumber());
+        assertTrue(theses.getContent().stream().allMatch(thesisClass::isInstance));
+
+        Pageable pageable2 = createPageable(0, 6);
+        assertNotNull(pageable2);
+        theses = pagedThesisService.findTheses(Optional.of(TestData.Teacher01.department), Optional.of(new Date()), Optional.empty(), Optional.empty(), pageable2);
+        assertNotNull(theses);
+        assertNotNull(theses.getContent());
+        assertEquals(6, theses.getContent().size());
+        assertEquals(15, theses.getTotalElements());
+        assertEquals(3, theses.getTotalPages());
+        assertEquals(0, theses.getPageable().getPageNumber());
         assertTrue(theses.getContent().stream().allMatch(thesisClass::isInstance));
     }
 }

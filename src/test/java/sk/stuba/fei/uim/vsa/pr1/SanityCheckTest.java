@@ -106,7 +106,7 @@ public class SanityCheckTest {
     }
 
     @Test
-    void testForProjectSetup() { // TODO check pre anotácie @Entity a @Id
+    void testForProjectSetup() {
         try {
             log.info("Running basic tests of creating instances of entity classes");
             Object thesis = thesisClass.newInstance();

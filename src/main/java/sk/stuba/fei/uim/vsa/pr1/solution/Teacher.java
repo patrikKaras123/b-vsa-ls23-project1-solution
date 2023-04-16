@@ -32,7 +32,7 @@ public class Teacher implements Serializable {
     @Column(nullable = false)
     private String department;
 
-    @OneToMany(mappedBy = "supervisor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "supervisor", cascade = {CascadeType.REMOVE}, orphanRemoval = true)
     private List<Thesis> supervisedTheses;
 
     public Teacher() {

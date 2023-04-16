@@ -36,7 +36,7 @@ public class Thesis implements Serializable {
     private String department;
 
     @JoinColumn(nullable = false)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Teacher supervisor;
 
     @OneToOne(fetch = FetchType.EAGER)
@@ -50,25 +50,12 @@ public class Thesis implements Serializable {
     private Date deadline;
 
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private ThesisType type;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private ThesisStatus status;
 
     public Thesis() {
-    }
-
-    public static enum Type {
-        BACHELOR,
-        MASTER,
-        DISSERTATION;
-    }
-
-    public static enum Status {
-        FREE_TO_TAKE,
-        IN_PROGRESS,
-        SUBMITTED,
-        DEFENDED;
     }
 
 }
