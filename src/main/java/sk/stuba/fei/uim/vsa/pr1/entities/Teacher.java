@@ -1,8 +1,8 @@
 package sk.stuba.fei.uim.vsa.pr1.entities;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import sk.stuba.fei.uim.vsa.pr1.entities.Assignment;
 
 import javax.persistence.*;
 import java.io.Serializable;
