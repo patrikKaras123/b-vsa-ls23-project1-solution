@@ -9,7 +9,6 @@ import sk.stuba.fei.uim.vsa.pr1.entities.Student;
 import sk.stuba.fei.uim.vsa.pr1.entities.Teacher;
 import sk.stuba.fei.uim.vsa.pr1.enums.Status;
 import sk.stuba.fei.uim.vsa.pr1.enums.Typ;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.time.LocalDate;
