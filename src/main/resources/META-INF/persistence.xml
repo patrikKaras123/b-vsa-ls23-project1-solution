@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="vsa-project-1" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>sk.stuba.fei.uim.vsa.pr1.solution.Student</class>
-    <class>sk.stuba.fei.uim.vsa.pr1.solution.Teacher</class>
-    <class>sk.stuba.fei.uim.vsa.pr1.solution.Thesis</class>
+    <class>sk.stuba.fei.uim.vsa.pr1.entities.Student</class>
+    <class>sk.stuba.fei.uim.vsa.pr1.entities.Teacher</class>
+    <class>sk.stuba.fei.uim.vsa.pr1.entities.Assignment</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vsa_pr1"/>

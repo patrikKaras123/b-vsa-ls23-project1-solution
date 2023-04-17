@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.File;
 import java.nio.file.Files;
 import java.sql.Timestamp;
@@ -23,7 +25,7 @@ import static sk.stuba.fei.uim.vsa.pr1.utils.TestUtils.*;
 public class SanityCheckTest {
 
     private static final Logger log = LoggerFactory.getLogger(SanityCheckTest.class);
-
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("vsa-project-1");
     private static AbstractThesisService<Object, Object, Object> thesisService;
     private static Class<?> thesisClass;
     private static String thesisIdField;

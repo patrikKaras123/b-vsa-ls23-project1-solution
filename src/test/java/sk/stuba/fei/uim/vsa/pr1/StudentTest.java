@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.lang.reflect.InvocationTargetException;
 import java.security.SecureRandom;
 import java.sql.Connection;
@@ -26,6 +29,7 @@ public class StudentTest {
 
     private static final Logger log = LoggerFactory.getLogger(StudentTest.class);
 
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("vsa-project-1");
     private static AbstractThesisService<Object, Object, Object> thesisService;
     private static Class<?> studentClass;
     private static String studentIdField;
@@ -44,9 +48,22 @@ public class StudentTest {
     }
 
     @BeforeEach
+    void deleteAfterEach() {
+        EntityManager entityManager = emf.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.createQuery("DELETE FROM Assignment").executeUpdate();
+        entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        entityManager.createQuery("DELETE FROM Teacher").executeUpdate();
+        entityManager.getTransaction().commit();
+    }
+
+    /*  riesenie, lebo sa nespravne vymazu vsetky tabulky a zostanu tam veci z inych testov
+    @BeforeEach
     void before() {
         clearDB(db);
     }
+    */
 
     @AfterAll
     static void cleaning() throws SQLException {
