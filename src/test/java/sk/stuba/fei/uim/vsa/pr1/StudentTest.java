@@ -1,14 +1,14 @@
 package sk.stuba.fei.uim.vsa.pr1;
 
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sk.stuba.fei.uim.vsa.pr1.utils.TestData;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.lang.reflect.InvocationTargetException;
 import java.security.SecureRandom;
 import java.sql.Connection;
@@ -24,6 +24,7 @@ import static sk.stuba.fei.uim.vsa.pr1.utils.TestUtils.*;
 
 public class StudentTest {
 
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("vsa-project-1");
     private static final Logger log = LoggerFactory.getLogger(StudentTest.class);
     private static AbstractThesisService<Object, Object, Object> thesisService;
     private static Class<?> studentClass;
@@ -43,8 +44,14 @@ public class StudentTest {
     }
 
     @BeforeEach
-    void before() {
-        clearDB(db);
+    void deleteAfterEach() {
+        EntityManager entityManager = emf.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.createQuery("DELETE FROM Assignment").executeUpdate();
+        entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        entityManager.createQuery("DELETE FROM Teacher").executeUpdate();
+        entityManager.getTransaction().commit();
     }
 
     @AfterAll

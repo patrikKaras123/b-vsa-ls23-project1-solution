@@ -1,15 +1,15 @@
-package sk.stuba.fei.uim.vsa.pr1.utils;
+package sk.stuba.fei.uim.vsa.pr1;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static sk.stuba.fei.uim.vsa.pr1.utils.TestUtils.getTestClassFieldValues;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sk.stuba.fei.uim.vsa.pr1.AbstractThesisService;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.lang.reflect.InvocationTargetException;
 import java.security.SecureRandom;
 import java.sql.Connection;
@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static sk.stuba.fei.uim.vsa.pr1.utils.TestConstants.*;
 import static sk.stuba.fei.uim.vsa.pr1.utils.TestData.Teacher01;
 import static sk.stuba.fei.uim.vsa.pr1.utils.TestData.Teacher02;
@@ -29,6 +28,7 @@ public class TeacherTest {
 
     private static final Logger log = LoggerFactory.getLogger(TeacherTest.class);
 
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("vsa-project-1");
     private static AbstractThesisService<Object, Object, Object> thesisService;
     private static Class<?> teacherClass;
     private static String teacherIdField;
@@ -47,8 +47,14 @@ public class TeacherTest {
     }
 
     @BeforeEach
-    void before() {
-        clearDB(db);
+    void deleteAfterEach() {
+        EntityManager entityManager = emf.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.createQuery("DELETE FROM Assignment").executeUpdate();
+        entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        entityManager.createQuery("DELETE FROM Teacher").executeUpdate();
+        entityManager.getTransaction().commit();
     }
 
     @AfterAll
@@ -172,15 +178,15 @@ public class TeacherTest {
     @Test
     void TE06_emailShouldBeUnique() {
         try {
-            Object teacher = createTeacher(thesisService, TestData.Teacher01.class);
+            Object teacher = createTeacher(thesisService, Teacher01.class);
             assertNotNull(teacher);
             assertInstanceOf(teacherClass, teacher);
 
             Object failed = thesisService.createTeacher(
-                    getTestClassFieldValues(TestData.Teacher02.class, "aisId", Long.class),
-                    getTestClassFieldValues(TestData.Teacher02.class, "name", String.class),
-                    getTestClassFieldValues(TestData.Teacher01.class, "email", String.class),
-                    getTestClassFieldValues(TestData.Teacher02.class, "department", String.class));
+                    getTestClassFieldValues(Teacher02.class, "aisId", Long.class),
+                    getTestClassFieldValues(Teacher02.class, "name", String.class),
+                    getTestClassFieldValues(Teacher01.class, "email", String.class),
+                    getTestClassFieldValues(Teacher02.class, "department", String.class));
             assertNull(failed);
         } catch (Exception e) {
             fail(e);

@@ -1,5 +1,9 @@
 package sk.stuba.fei.uim.vsa.pr1;
 
+import sk.stuba.fei.uim.vsa.pr1.bonus.MyPage;
+import sk.stuba.fei.uim.vsa.pr1.bonus.Page;
+import sk.stuba.fei.uim.vsa.pr1.bonus.Pageable;
+import sk.stuba.fei.uim.vsa.pr1.bonus.PageableThesisService;
 import sk.stuba.fei.uim.vsa.pr1.entities.Assignment;
 import sk.stuba.fei.uim.vsa.pr1.entities.Student;
 import sk.stuba.fei.uim.vsa.pr1.entities.Teacher;
@@ -26,11 +30,11 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             if (query.getResultList().size() > 0) {
                 return null;
             }
-            /*TypedQuery<Student> query1 = em.createQuery("SELECT s FROM Student s WHERE s.aisId = :ais", Student.class);
+            TypedQuery<Student> query1 = em.createQuery("SELECT s FROM Student s WHERE s.aisId = :ais", Student.class);
             query1.setParameter("ais", aisId);
             if (query1.getResultList().size() > 0) {
                 return null;
-            }*/
+            }
             TypedQuery<Teacher> query2 = em.createQuery("SELECT s FROM Teacher s WHERE s.email = :email", Teacher.class);
             query2.setParameter("email", email);
             if (query2.getResultList().size() > 0) {
@@ -217,11 +221,11 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Assig
             if (query.getResultList().size() > 0) {
                 return null;
             }
-            /*TypedQuery<Teacher> query1 = em.createQuery("SELECT s FROM Teacher s WHERE s.aisId = :ais", Teacher.class);
+            TypedQuery<Teacher> query1 = em.createQuery("SELECT s FROM Teacher s WHERE s.aisId = :ais", Teacher.class);
             query1.setParameter("ais", aisId);
             if (query1.getResultList().size() > 0) {
                 return null;
-            }*/
+            }
             TypedQuery<Student> query2 = em.createQuery("SELECT s FROM Student s WHERE s.email = :email", Student.class);
             query2.setParameter("email", email);
             if (query2.getResultList().size() > 0) {
