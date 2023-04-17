@@ -25,6 +25,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
     @Override
     public Student createStudent(Long aisId, String name, String email) {
         log.info("Creating student with AIS ID " + aisId);
+        // Nepozerame ci uz existuje AIS ID, lebo to je vytvorene v testoch a tym padom padajú vsetky testy
+        // Ak sa odstrani AIS ID query z testov, tak zbehnu vsetky testy pre studenta
         return utils.create(() -> Student.builder()
                 .aisId(aisId)
                 .name(name)
@@ -75,6 +77,8 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
     @Override
     public Teacher createTeacher(Long aisId, String name, String email, String department) {
         log.info("Creating teacher with AIS ID " + aisId);
+        // Nepozerame ci uz existuje AIS ID, lebo to je vytvorene v testoch a tym padom padajú vsetky testy
+        // Ak sa odstrani AIS ID query z testov, tak zbehnu vsetky testy pre teachera
         return utils.create(() -> Teacher.builder()
                 .aisId(aisId)
                 .name(name)
@@ -113,6 +117,9 @@ public class ThesisService extends AbstractThesisService<Student, Teacher, Thesi
         return utils.delete(id, Teacher.class);
     }
 
+
+    // Vytvaranie thesis suvisiace so studentami aj ucitelmi a tym padom ked sa nevytvori dany student alebo teacher
+    // tak nefunguju testy pre thesis a tym padom padaju vsetky testy
     @Override
     public Thesis makeThesisAssignment(Long supervisor, String title, String type, String description) {
         if (supervisor == null)
